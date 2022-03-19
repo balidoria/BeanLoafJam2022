@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
 
     public Grid GameGrid;
     public Tilemap GameTileMap;
+    public Tilemap UITileMap;
+    public Tile UIHighlightTile;
+    private Vector3Int UIHighlightTilePosition = Vector3Int.zero;
 
     // The plant we can currently plant.
     internal BasePlant plantBeingPlanted = null;
@@ -45,12 +48,26 @@ public class GameManager : MonoBehaviour
             // TODO: End and win game.
         }
 
+        // Cursor and Plants
+        Vector3Int gridPosition = GameGrid.WorldToCell(MainCamera.ScreenToWorldPoint(Input.mousePosition));
+        gridPosition = new Vector3Int(gridPosition.x, gridPosition.y, 0);
+        if (GameTileMap.HasTile(gridPosition))
+        {
+            UITileMap.SetTile(UIHighlightTilePosition, null);
+            UITileMap.SetTile(gridPosition, UIHighlightTile);
+            UIHighlightTilePosition = gridPosition;
+        } else
+        {
+            UITileMap.SetTile(UIHighlightTilePosition, null);
+            UIHighlightTilePosition = Vector3Int.zero;
+        }
+
+
         if (plantBeingPlanted != null)
         {
             var c2d = plantBeingPlanted.GetComponent<Collider2D>();
             c2d.enabled = false;
-            Vector3Int gridPosition = GameGrid.WorldToCell(MainCamera.ScreenToWorldPoint(Input.mousePosition));
-            gridPosition = new Vector3Int(gridPosition.x, gridPosition.y, 0);
+
             if (GameTileMap.HasTile(gridPosition) && TileEmpty(GameGrid.GetCellCenterWorld(gridPosition)))
             {
                 plantBeingPlanted.transform.position = GameGrid.GetCellCenterWorld(gridPosition) + new Vector3(0.0f, 1.5f, 0.0f);
@@ -58,6 +75,10 @@ public class GameManager : MonoBehaviour
                 {
                     plantBeingPlanted.IsPlanted = true;
                     c2d.enabled = true;
+                    var sr = plantBeingPlanted.GetComponent<SpriteRenderer>();
+                    Color tmp = sr.color;
+                    tmp.a = 1.0f;
+                    plantBeingPlanted.GetComponent<SpriteRenderer>().color = tmp;
                     
                     plantBeingPlanted = null;
                 }

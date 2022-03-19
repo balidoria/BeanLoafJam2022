@@ -48,6 +48,10 @@ public class StoreManager : MonoBehaviour
         {
             GameManager.instance.playerMoney -= plant.StorePrice;
             GameManager.instance.plantBeingPlanted = Instantiate(plant);
+            var sr = GameManager.instance.plantBeingPlanted.GetComponent<SpriteRenderer>();
+            Color tmp = sr.color;
+            tmp.a = 0.25f;
+            GameManager.instance.plantBeingPlanted.GetComponent<SpriteRenderer>().color = tmp;
 
             // TODO: Show player they paid for the plant.
             Debug.Log("Bought " + plant.ToString() + " for " + plant.StorePrice);
