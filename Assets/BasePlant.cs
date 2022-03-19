@@ -112,7 +112,7 @@ public class BasePlant : MonoBehaviour
             secondsSpentGrowing += Time.deltaTime;
             if (secondsSpentGrowing >= SecondsGrownToQualityDecay)
             {
-                SellPrice = OriginalSellPrice * (int)((secondsSpentGrowing - SecondsGrownToQualityDecay) / SecondsUntilLowestQuality);
+                SellPrice = OriginalSellPrice - (int)(OriginalSellPrice * 0.5f * ((secondsSpentGrowing - SecondsGrownToQualityDecay) / SecondsUntilLowestQuality));
             }
         }
 
