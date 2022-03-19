@@ -25,6 +25,8 @@ public class BasePlant : MonoBehaviour
     [Tooltip("How much the player gets when they sell me.")]
     public int SellPrice;
 
+    private int OriginalSellPrice;
+
     [Tooltip("The effects I produce.")]
     public List<PlantEffect> Effects;
 
@@ -51,6 +53,12 @@ public class BasePlant : MonoBehaviour
     [Tooltip("How many seconds of time I need to spend growing to become completely grown.")]
     public float SecondsGrowingMediumToGrown;
 
+    [Tooltip("How many seconds of time I need to spend completely grown before I begin to lose value.")]
+    public float SecondsGrownToQualityDecay;
+
+    [Tooltip("How many seconds of time I need to spend rotting before I lose half of my value.")]
+    public float SecondsUntilLowestQuality;
+
     // How many seconds spent growing at the current PlantSize stage.
     private float secondsSpentGrowing = 0;
 
@@ -60,7 +68,10 @@ public class BasePlant : MonoBehaviour
     void Start()
     {
         // I don't need to be watered right away, they watered me at the store.
-        secondsSinceLastWatered = WateringIntervalInSeconds;
+        secondsSinceLastWatered = 0;
+
+        // Keep a record since our selling price can decay.
+        OriginalSellPrice = SellPrice;
     }
 
     void Update()
@@ -69,8 +80,8 @@ public class BasePlant : MonoBehaviour
             return;
 
         // Update status to thirsty or dead if we need water.
-        secondsSinceLastWatered -= Time.deltaTime;
-        if (secondsSinceLastWatered <= 0)
+        secondsSinceLastWatered += Time.deltaTime;
+        if (secondsSinceLastWatered >= WateringIntervalInSeconds)
         {
             Status = PlantStatus.THIRSTY;
         }
@@ -89,8 +100,19 @@ public class BasePlant : MonoBehaviour
                 secondsSpentGrowing = 0;
             } else if (Size == PlantStage.HALFWAYTHERE && secondsSpentGrowing >= SecondsGrowingMediumToGrown)
             {
+                secondsSpentGrowing = 0;
                 Size = PlantStage.FULLSIZE;
                 Status = PlantStatus.GROWN;
+            }
+        }
+
+        // Decay in value if we've been Grown too long.
+        if (Status == PlantStatus.GROWN)
+        {
+            secondsSpentGrowing += Time.deltaTime;
+            if (secondsSpentGrowing >= SecondsGrownToQualityDecay)
+            {
+                SellPrice = OriginalSellPrice * (int)((secondsSpentGrowing - SecondsGrownToQualityDecay) / SecondsUntilLowestQuality);
             }
         }
 
@@ -104,6 +126,12 @@ public class BasePlant : MonoBehaviour
 
     private void OnMouseUpAsButton()
     {
+        if ( GameManager.instance.plantBeingPlanted != null)
+        {
+            // No touching current plants until you're done planting!
+            return;
+        }
+
         if (Status == PlantStatus.DEAD)
         {
             RemovePlant();
@@ -126,7 +154,7 @@ public class BasePlant : MonoBehaviour
     {
         // TODO: Formalize watering design.
         Debug.Log("Watered: " + this.ToString());
-        secondsSinceLastWatered = WateringIntervalInSeconds;
+        secondsSinceLastWatered = 0;
         if (Size == PlantStage.FULLSIZE)
         {
             Status = PlantStatus.GROWN;
@@ -140,7 +168,7 @@ public class BasePlant : MonoBehaviour
     {
         // Remove this plant from existence.
         Debug.Log("Remvoing: " + this.ToString());
-        Destroy(this);
+        Destroy(gameObject);
     }
 }
 

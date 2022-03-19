@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        
+        playerMoney = playerStartingMoney;
     }
 
     void Update()
@@ -74,6 +74,7 @@ public class GameManager : MonoBehaviour
                 if (Input.GetMouseButtonUp(0))
                 {
                     plantBeingPlanted.IsPlanted = true;
+                    plantBeingPlanted.Status = PlantStatus.GROWING;
                     c2d.enabled = true;
                     var sr = plantBeingPlanted.GetComponent<SpriteRenderer>();
                     Color tmp = sr.color;
@@ -84,6 +85,15 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    private BasePlant GetPlantOnTile(Vector3Int gridPositionWorld)
+    {
+        var hit = Physics2D.OverlapCircle(Vector2Int.FloorToInt(new Vector2(gridPositionWorld.x, gridPositionWorld.y)), 1);
+        if (hit == null)
+            return null;
+
+        return hit.GetComponentInChildren<BasePlant>();
     }
 
     private bool TileEmpty(Vector3 gridPositionWorld)
