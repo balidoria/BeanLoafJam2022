@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
 
             if (GameTileMap.HasTile(gridPosition) && TileEmpty(GameGrid.GetCellCenterWorld(gridPosition)))
             {
-                plantBeingPlanted.transform.position = GameGrid.GetCellCenterWorld(gridPosition);// + new Vector3(0.0f, 1.5f, 0.0f);
+                plantBeingPlanted.transform.position = GameGrid.GetCellCenterWorld(gridPosition);
                 if (Input.GetMouseButtonUp(0))
                 {
                     plantBeingPlanted.IsPlanted = true;
