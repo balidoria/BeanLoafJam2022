@@ -19,8 +19,12 @@ public class GameManager : MonoBehaviour
     [Tooltip("How much money the player needs to win the game.")]    
     [SerializeField] internal int goalMoney;
 
+    public Grid GameGrid;
+
     // The plant we can currently plant.
     internal BasePlant plantBeingPlanted = null;
+
+    public Camera MainCamera;
 
     void Awake() {
         instance = this;
@@ -38,8 +42,15 @@ public class GameManager : MonoBehaviour
             // TODO: End and win game.
         }
 
+        if (plantBeingPlanted != null)
+        {
+            Vector3Int point = GameGrid.WorldToCell(MainCamera.ScreenToWorldPoint(Input.mousePosition));
+            plantBeingPlanted.transform.position = GameGrid.GetCellCenterWorld(point);
+        }
 
     }
+
+
 
     public void PlayerSellPlant(BasePlant plant)
     {
