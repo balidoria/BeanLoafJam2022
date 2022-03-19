@@ -54,6 +54,9 @@ public class BasePlant : MonoBehaviour
     // How many seconds spent growing at the current PlantSize stage.
     private float secondsSpentGrowing = 0;
 
+    // Have I been planted?
+    internal bool IsPlanted = false;
+
     void Start()
     {
         // I don't need to be watered right away, they watered me at the store.
@@ -62,6 +65,9 @@ public class BasePlant : MonoBehaviour
 
     void Update()
     {
+        if (!IsPlanted)
+            return;
+
         // Update status to thirsty or dead if we need water.
         secondsSinceLastWatered -= Time.deltaTime;
         if (secondsSinceLastWatered <= 0)

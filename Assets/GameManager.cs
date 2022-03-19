@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +22,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] internal int goalMoney;
 
     public Grid GameGrid;
+    public Tilemap GameTileMap;
 
     // The plant we can currently plant.
     internal BasePlant plantBeingPlanted = null;
@@ -44,20 +47,34 @@ public class GameManager : MonoBehaviour
 
         if (plantBeingPlanted != null)
         {
-            Vector3Int point = GameGrid.WorldToCell(MainCamera.ScreenToWorldPoint(Input.mousePosition));
-            plantBeingPlanted.transform.position = GameGrid.GetCellCenterWorld(point);
-
-            if (Input.GetMouseButtonUp(0))
+            var c2d = plantBeingPlanted.GetComponent<Collider2D>();
+            c2d.enabled = false;
+            Vector3Int gridPosition = GameGrid.WorldToCell(MainCamera.ScreenToWorldPoint(Input.mousePosition));
+            gridPosition = new Vector3Int(gridPosition.x, gridPosition.y, 0);
+            if (GameTileMap.HasTile(gridPosition) && TileEmpty(GameGrid.GetCellCenterWorld(gridPosition)))
             {
-                // Place plant if valid grid position.
-                // TODO: Check valid grid position.
-
-                plantBeingPlanted = null;
+                plantBeingPlanted.transform.position = GameGrid.GetCellCenterWorld(gridPosition) + new Vector3(0.0f, 1.5f, 0.0f);
+                if (Input.GetMouseButtonUp(0))
+                {
+                    plantBeingPlanted.IsPlanted = true;
+                    c2d.enabled = true;
+                    
+                    plantBeingPlanted = null;
+                }
             }
         }
     }
 
+    private bool TileEmpty(Vector3 gridPositionWorld)
+    {
+        var hit = Physics2D.OverlapCircle(Vector2Int.FloorToInt(new Vector2(gridPositionWorld.x, gridPositionWorld.y)), 1);
+        if (hit != null && hit.GetComponentInChildren<BasePlant>() != null)
+        {
+            return false;
+        }
 
+        return true;
+    }
 
     public void PlayerSellPlant(BasePlant plant)
     {
