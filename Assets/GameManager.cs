@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [Tooltip("I'm a singleton, the most overused pattern of all time.")]
     public static GameManager instance;
 
+    [Tooltip("The plant store.")]
     public StoreManager storeManager;
 
-    public int playerMoney;
+    [Tooltip("How much money the player has.")]
+    [SerializeField] internal int playerMoney;
 
+    [Tooltip("How much money the player starts the game with.")]
     [SerializeField] int playerStartingMoney;
-    
-    public int goalMoney;
 
-    internal BasePlant plantBeingPlanted;
+    [Tooltip("How much money the player needs to win the game.")]    
+    [SerializeField] internal int goalMoney;
+
+    // The plant we can currently plant.
+    internal BasePlant plantBeingPlanted = null;
 
     void Awake() {
         instance = this;
@@ -37,14 +43,14 @@ public class GameManager : MonoBehaviour
 
     public void PlayerSellPlant(BasePlant plant)
     {
-        if (plant.status == PlantStatus.GROWN)
+        if (plant.Status == PlantStatus.GROWN)
         {
-            GameManager.instance.playerMoney += plant.sellPrice;
-            // TODO: Remove the plant from the player garden.
+            GameManager.instance.playerMoney += plant.SellPrice;
+            Debug.Log("Sold " + plant.ToString() + " for " + plant.SellPrice);
         } else
         {
             // TODO: No sale!
-            Debug.Log("Tried to sell " + plant.ToString() + " but it is not fully grown");
+            Debug.Log("Tried to sell " + plant.ToString() + " but it was not fully grown!");
         }
     }
 

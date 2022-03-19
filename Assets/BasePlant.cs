@@ -1,12 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum PlantSize
+public enum PlantStage
 {
-    SMOL,
-    MEDIUM,
-    LARGE
+    IMBABY,
+    HALFWAYTHERE,
+    FULLSIZE
 }
 
 public enum PlantStatus
@@ -19,96 +20,117 @@ public enum PlantStatus
 
 public class BasePlant : MonoBehaviour
 {
-    public int storePrice;
-    public int sellPrice;
+    [Tooltip("How much I cost the player in the store.")]
+    public int StorePrice;
+    [Tooltip("How much the player gets when they sell me.")]
+    public int SellPrice;
 
-    public List<PlantEffect> effects;
+    [Tooltip("The effects I produce.")]
+    public List<PlantEffect> Effects;
 
-    public bool isTree;
+    // How long I have spent growing at the current stage of growth.
+    private int growTimeInSeconds;
 
-    public int growTimeInSeconds;
+    [Tooltip("How often I need to be watered.")]
+    public int WateringIntervalInSeconds;
 
-    public int wateringIntervalInSeconds;
+    [Tooltip("How big I have grown.")]
+    public PlantStage Size;
 
-    public PlantSize size;
+    [Tooltip("Am I growing, grown, thirsty, or dying?")]
+    public PlantStatus Status;
 
-    public PlantStatus status;
-
+    // How many seconds since I was last watered.
     private float secondsSinceLastWatered;
 
-    public float secondsUntilDeathWhenThirsty;
+    [Tooltip("How many seconds until I die after I become thirsty.")]
+    public float SecondsUntilDeathWhenThirsty;
 
-    public float secondsGrowingSmallToMedium;
-    public float secondsGrowingMediumToLarge;
+    [Tooltip("How many seconds of time I need to spend growing to no longer be a baby.")]
+    public float SecondsGrowingSmallToMidgrown;
+    [Tooltip("How many seconds of time I need to spend growing to become completely grown.")]
+    public float SecondsGrowingMediumToGrown;
 
+    // How many seconds spent growing at the current PlantSize stage.
     private float secondsSpentGrowing = 0;
 
     void Start()
     {
-        secondsSinceLastWatered = wateringIntervalInSeconds;
+        // I don't need to be watered right away, they watered me at the store.
+        secondsSinceLastWatered = WateringIntervalInSeconds;
     }
 
     void Update()
     {
-        // Are we thirsty or even dead?
+        // Update status to thirsty or dead if we need water.
         secondsSinceLastWatered -= Time.deltaTime;
         if (secondsSinceLastWatered <= 0)
         {
-            status = PlantStatus.THIRSTY;
+            Status = PlantStatus.THIRSTY;
         }
-        if (secondsSinceLastWatered >= secondsUntilDeathWhenThirsty)
+        if (secondsSinceLastWatered >= SecondsUntilDeathWhenThirsty)
         {
-            status = PlantStatus.DEAD;
+            Status = PlantStatus.DEAD;
         }
 
         // Grow if we are growing.
-        if (status == PlantStatus.GROWING)
+        if (Status == PlantStatus.GROWING)
         {
             secondsSpentGrowing += Time.deltaTime;
-            if (size == PlantSize.SMOL && secondsSpentGrowing >= secondsGrowingSmallToMedium)
+            if (Size == PlantStage.IMBABY && secondsSpentGrowing >= SecondsGrowingSmallToMidgrown)
             {
-                size = PlantSize.MEDIUM;
+                Size = PlantStage.HALFWAYTHERE;
                 secondsSpentGrowing = 0;
-            } else if (size == PlantSize.MEDIUM && secondsSpentGrowing >= secondsGrowingMediumToLarge)
+            } else if (Size == PlantStage.HALFWAYTHERE && secondsSpentGrowing >= SecondsGrowingMediumToGrown)
             {
-                size = PlantSize.LARGE;
-                status = PlantStatus.GROWN;
+                Size = PlantStage.FULLSIZE;
+                Status = PlantStatus.GROWN;
             }
         }
 
         // Cast spells if we are ready.
-        foreach (PlantEffect spell in effects)
+        foreach (PlantEffect spell in Effects)
         {
-            
+            // TODO: Determine ranges.
+            // spell.TryCast(this);
         }
     }
 
     private void OnMouseUpAsButton()
-    {    
-        if (status == PlantStatus.DEAD)
+    {
+        if (Status == PlantStatus.DEAD)
         {
-            RemoveDeadPlant();
+            RemovePlant();
+        } else if (Status == PlantStatus.GROWN)
+        {
+            SellPlant();
         } else
         {
             WaterPlant();
         }
     }
 
+    private void SellPlant()
+    {
+        GameManager.instance.PlayerSellPlant(this);
+        RemovePlant();
+    }
+
     private void WaterPlant()
     {
         // TODO: Formalize watering design.
         Debug.Log("Watered: " + this.ToString());
-        secondsSinceLastWatered = wateringIntervalInSeconds;
-        if (size == PlantSize.LARGE)
+        secondsSinceLastWatered = WateringIntervalInSeconds;
+        if (Size == PlantStage.FULLSIZE)
         {
-            status = PlantStatus.GROWN;
-        } else if (status != PlantStatus.DEAD)
+            Status = PlantStatus.GROWN;
+        } else if (Status != PlantStatus.DEAD)
         {
-            status = PlantStatus.GROWING;
+            Status = PlantStatus.GROWING;
         }
     }
 
-    private void RemoveDeadPlant()
+    private void RemovePlant()
     {
         // Remove this plant from existence.
         Debug.Log("Remvoing: " + this.ToString());

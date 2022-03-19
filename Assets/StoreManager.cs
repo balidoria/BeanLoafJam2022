@@ -23,7 +23,7 @@ public class StoreManager : MonoBehaviour
         
     }
 
-    async void Update()
+    void Update()
     {
         // TEMP DEBUG
         for(int i = 0 ; i < keyCodes.Length; i ++ )
@@ -33,7 +33,8 @@ public class StoreManager : MonoBehaviour
                 try
                 {
                     PlayerBuyPlant(plantsForSale[i]);
-                } catch (System.IndexOutOfRangeException e) {
+                } catch (System.Exception e) 
+                {
                     Debug.Log(e.ToString() + ": No plant on sale for index: " + i);
                 }
             }
@@ -43,20 +44,21 @@ public class StoreManager : MonoBehaviour
 
     public void PlayerBuyPlant(BasePlant plant)
     {
-        if (GameManager.instance.playerMoney >= plant.storePrice)
+        if (GameManager.instance.playerMoney >= plant.StorePrice)
         {
-            GameManager.instance.playerMoney -= plant.storePrice;
-            GameManager.instance.plantBeingPlanted = plant;
+            GameManager.instance.playerMoney -= plant.StorePrice;
+            GameManager.instance.plantBeingPlanted = Instantiate(plant);
 
             // TODO: Show player they paid for the plant.
-            Debug.Log("Bought " + plant.ToString() + " for " + plant.storePrice);
+            Debug.Log("Bought " + plant.ToString() + " for " + plant.StorePrice);
         } else
         {
             // TODO: Show player they can't afford the plant.
-            Debug.Log("Too poor to buy " + plant.ToString() + " for " + plant.storePrice);
+            Debug.Log("Too poor to buy " + plant.ToString() + " for " + plant.StorePrice);
         }
     }
  
+    [Tooltip("The plants for sale in the store.")]
     public List<BasePlant> plantsForSale;
 }
 
