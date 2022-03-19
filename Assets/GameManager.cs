@@ -86,10 +86,14 @@ public class GameManager : MonoBehaviour
                     plantBeingPlanted.IsPlanted = true;
                     plantBeingPlanted.Status = PlantStatus.GROWING;
                     c2d.enabled = true;
-                    var sr = plantBeingPlanted.GetComponent<SpriteRenderer>();
-                    Color tmp = sr.color;
-                    tmp.a = 1.0f;
-                    plantBeingPlanted.GetComponent<SpriteRenderer>().color = tmp;
+                    var renderers = plantBeingPlanted.GetComponentsInChildren<SpriteRenderer>();
+                    foreach (var sr in renderers)
+                    {
+                        Color tmp = sr.color;
+                        tmp.a = 1.0f;
+                        sr.color = tmp;
+                    }
+                    
                     
                     plantBeingPlanted = null;
                 }

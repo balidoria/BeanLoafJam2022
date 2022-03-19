@@ -72,13 +72,25 @@ public class BasePlant : MonoBehaviour
 
     internal bool hasWeeds = false;
 
+    public SpriteRenderer ThirstNotification;
+    public SpriteRenderer PlantBody;
+
+    public Sprite SaplingSprite;
+    public Sprite JuvenileSprite;
+    public Sprite AdultSprite;
+    public Sprite DeadSprite;
+
     void Start()
     {
         // I don't need to be watered right away, they watered me at the store.
         secondsSinceLastWatered = 0;
+        ThirstNotification.enabled = false;
 
         // Keep a record since our selling price can decay.
         OriginalSellPrice = SellPrice;
+
+        PlantBody.sprite = SaplingSprite;
+
     }
 
     void Update()
@@ -88,13 +100,16 @@ public class BasePlant : MonoBehaviour
 
         // Update status to thirsty or dead if we need water.
         secondsSinceLastWatered += Time.deltaTime;
-        if (secondsSinceLastWatered >= WateringIntervalInSeconds)
+        if (secondsSinceLastWatered >= WateringIntervalInSeconds && Status != PlantStatus.DEAD)
         {
             Status = PlantStatus.THIRSTY;
+            ThirstNotification.enabled = true;
         }
-        if (secondsSinceLastWatered >= SecondsUntilDeathWhenThirsty)
+        if (secondsSinceLastWatered - WateringIntervalInSeconds >= SecondsUntilDeathWhenThirsty)
         {
             Status = PlantStatus.DEAD;
+            PlantBody.sprite = DeadSprite;
+            ThirstNotification.enabled = false;
         }
 
         // Grow if we are growing.
@@ -106,12 +121,14 @@ public class BasePlant : MonoBehaviour
             if (Size == PlantStage.IMBABY && secondsSpentGrowing >= SecondsGrowingSmallToMidgrown)
             {
                 Size = PlantStage.HALFWAYTHERE;
+                PlantBody.sprite = JuvenileSprite;
                 secondsSpentGrowing = 0;
             } else if (Size == PlantStage.HALFWAYTHERE && secondsSpentGrowing >= SecondsGrowingMediumToGrown)
             {
                 secondsSpentGrowing = 0;
                 Size = PlantStage.FULLSIZE;
                 Status = PlantStatus.GROWN;
+                PlantBody.sprite = AdultSprite;
             }
         }
 
@@ -192,10 +209,14 @@ public class BasePlant : MonoBehaviour
         if (Size == PlantStage.FULLSIZE)
         {
             Status = PlantStatus.GROWN;
+            PlantBody.sprite = AdultSprite;
+
         } else if (Status != PlantStatus.DEAD)
         {
             Status = PlantStatus.GROWING;
+            PlantBody.sprite = Size == PlantStage.IMBABY ? SaplingSprite : JuvenileSprite;
         }
+        ThirstNotification.enabled = false;
     }
 
     private void RemovePlant()
