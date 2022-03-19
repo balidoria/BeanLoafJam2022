@@ -46,8 +46,15 @@ public class GameManager : MonoBehaviour
         {
             Vector3Int point = GameGrid.WorldToCell(MainCamera.ScreenToWorldPoint(Input.mousePosition));
             plantBeingPlanted.transform.position = GameGrid.GetCellCenterWorld(point);
-        }
 
+            if (Input.GetMouseButtonUp(0))
+            {
+                // Place plant if valid grid position.
+                // TODO: Check valid grid position.
+
+                plantBeingPlanted = null;
+            }
+        }
     }
 
 
