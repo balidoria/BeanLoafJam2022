@@ -75,6 +75,8 @@ public class BasePlant : MonoBehaviour
     public SpriteRenderer ThirstNotification;
     public SpriteRenderer PlantBody;
 
+    public SpriteRenderer Weeds;
+
     public Sprite SaplingSprite;
     public Sprite JuvenileSprite;
     public Sprite AdultSprite;
@@ -85,6 +87,7 @@ public class BasePlant : MonoBehaviour
         // I don't need to be watered right away, they watered me at the store.
         secondsSinceLastWatered = 0;
         ThirstNotification.enabled = false;
+        Weeds.enabled = false;
 
         // Keep a record since our selling price can decay.
         OriginalSellPrice = SellPrice;
@@ -160,6 +163,7 @@ public class BasePlant : MonoBehaviour
         {
             // Get weeded.
             hasWeeds = true;
+            Weeds.enabled = true;
         }
     }
 
@@ -193,6 +197,7 @@ public class BasePlant : MonoBehaviour
     {
         Debug.Log("Deweeded " + this.ToString());
         hasWeeds = false;
+        Weeds.enabled = false;
     }
 
     private void SellPlant()
