@@ -48,3 +48,9 @@ MonoBehaviour:
   playerMoney: 0
   playerStartingMoney: 50
   goalMoney: 500
+  GameGrid: {fileID: 0}
+  GameTileMap: {fileID: 0}
+  UITileMap: {fileID: 0}
+  UIHighlightTile: {fileID: 11400000, guid: 8c75229c9121132458cc22d9189e43e5, type: 2}
+  MainCamera: {fileID: 0}
+  SecondsBetweenWeedRolls: 0
