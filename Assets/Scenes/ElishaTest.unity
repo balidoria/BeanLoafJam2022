@@ -1064,6 +1064,38 @@ PrefabInstance:
       propertyPath: m_DrawMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 163061140c5ce0341bc56d4314c3781d, type: 3}
+      propertyPath: SellPrice
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 163061140c5ce0341bc56d4314c3781d, type: 3}
+      propertyPath: StorePrice
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 163061140c5ce0341bc56d4314c3781d, type: 3}
+      propertyPath: SecondsUntilLowestQuality
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 163061140c5ce0341bc56d4314c3781d, type: 3}
+      propertyPath: WateringIntervalInSeconds
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 163061140c5ce0341bc56d4314c3781d, type: 3}
+      propertyPath: SecondsGrownToQualityDecay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 163061140c5ce0341bc56d4314c3781d, type: 3}
+      propertyPath: SecondsGrowingMediumToGrown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 163061140c5ce0341bc56d4314c3781d, type: 3}
+      propertyPath: SecondsUntilDeathWhenThirsty
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 163061140c5ce0341bc56d4314c3781d, type: 3}
+      propertyPath: SecondsGrowingSmallToMidgrown
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912701, guid: 163061140c5ce0341bc56d4314c3781d, type: 3}
       propertyPath: m_RootOrder
       value: 3

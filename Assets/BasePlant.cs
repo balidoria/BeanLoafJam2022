@@ -65,6 +65,13 @@ public class BasePlant : MonoBehaviour
     // Have I been planted?
     internal bool IsPlanted = false;
 
+    [Tooltip("Base chance of getting weeds on a weed roll, out of 100.")]
+    public int chanceOfWeededness;
+
+    internal int weedednessModifier;
+
+    internal bool hasWeeds = false;
+
     void Start()
     {
         // I don't need to be watered right away, they watered me at the store.
@@ -93,7 +100,9 @@ public class BasePlant : MonoBehaviour
         // Grow if we are growing.
         if (Status == PlantStatus.GROWING)
         {
-            secondsSpentGrowing += Time.deltaTime;
+            if (!hasWeeds)
+                secondsSpentGrowing += Time.deltaTime;
+
             if (Size == PlantStage.IMBABY && secondsSpentGrowing >= SecondsGrowingSmallToMidgrown)
             {
                 Size = PlantStage.HALFWAYTHERE;
@@ -124,6 +133,19 @@ public class BasePlant : MonoBehaviour
         }
     }
 
+    internal void rollForWeeds()
+    {
+        System.Random rand = new System.Random();
+
+        int roll = rand.Next(100);
+
+        if (roll < chanceOfWeededness + weedednessModifier)
+        {
+            // Get weeded.
+            hasWeeds = true;
+        }
+    }
+
     private void OnMouseUpAsButton()
     {
         if ( GameManager.instance.plantBeingPlanted != null)
@@ -140,8 +162,20 @@ public class BasePlant : MonoBehaviour
             SellPlant();
         } else
         {
-            WaterPlant();
+            if (!hasWeeds)
+            {
+                WaterPlant();
+            } else 
+            {
+                RemoveWeeds();
+            }
         }
+    }
+
+    private void RemoveWeeds()
+    {
+        Debug.Log("Deweeded " + this.ToString());
+        hasWeeds = false;
     }
 
     private void SellPlant()

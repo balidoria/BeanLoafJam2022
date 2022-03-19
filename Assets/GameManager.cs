@@ -32,6 +32,11 @@ public class GameManager : MonoBehaviour
 
     public Camera MainCamera;
 
+    [Tooltip("How often we roll a plant for getting Weeds.")]
+    public float SecondsBetweenWeedRolls;
+
+    private float secondsSinceLastWeedRoll;
+
     void Awake() {
         instance = this;
     }
@@ -43,12 +48,17 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        // Ending the game.
         if (playerMoney >= goalMoney)
         {
             // TODO: End and win game.
         }
+        if (playerMoney <= 0)
+        {
+            // TODO: End and lose game.
+        }
 
-        // Cursor and Plants
+        // Cursor.
         Vector3Int gridPosition = GameGrid.WorldToCell(MainCamera.ScreenToWorldPoint(Input.mousePosition));
         gridPosition = new Vector3Int(gridPosition.x, gridPosition.y, 0);
         if (GameTileMap.HasTile(gridPosition))
@@ -62,7 +72,7 @@ public class GameManager : MonoBehaviour
             UIHighlightTilePosition = Vector3Int.zero;
         }
 
-
+        // Planting plants.
         if (plantBeingPlanted != null)
         {
             var c2d = plantBeingPlanted.GetComponent<Collider2D>();
@@ -83,6 +93,28 @@ public class GameManager : MonoBehaviour
                     
                     plantBeingPlanted = null;
                 }
+            }
+        }
+
+        // Weeds.
+        secondsSinceLastWeedRoll += Time.deltaTime;
+        if (secondsSinceLastWeedRoll >= SecondsBetweenWeedRolls)
+        {
+            secondsSinceLastWeedRoll = 0;
+            var plants = GameObject.FindObjectsOfType<BasePlant>();
+            List<BasePlant> weedablePlants = new List<BasePlant>();
+            foreach (var plant in plants)
+            {
+                if (plant.Status != PlantStatus.DEAD && plant.IsPlanted)
+                {
+                    weedablePlants.Add(plant);
+                }
+            }
+            if (weedablePlants.Count > 0)
+            {
+                System.Random rand = new System.Random();
+                var target = weedablePlants[rand.Next(weedablePlants.Count)];
+                target.rollForWeeds();
             }
         }
     }
