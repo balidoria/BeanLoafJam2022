@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,6 +33,11 @@ public class GameManager : MonoBehaviour
     public Tile UIHighlightTile;
     public TMP_Text UIMoneyText;
     public Slider UIFundraiser;
+    public GameObject UICanvas;
+    public GameObject UIWin;
+    public GameObject UILose;
+    public AudioSource AudioObject;
+    public AudioClip WinningSound;
     private Vector3Int UIHighlightTilePosition = Vector3Int.zero;
 
     // The plant we can currently plant.
@@ -52,6 +58,9 @@ public class GameManager : MonoBehaviour
     {
         playerMoney = playerStartingMoney;
         numOfActivePlants = 0;
+
+        UIWin.SetActive(false);
+        UILose.SetActive(false);
     }
 
     void Update()
@@ -63,13 +72,11 @@ public class GameManager : MonoBehaviour
         // Ending the game.
         if (playerMoney >= goalMoney)
         {
-            // End and win game.
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Ending");
+            PlayerWins();
         }
         if (playerMoney < 10 && numOfActivePlants == 0)
         {
-            // TODO: End and lose game.
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Lose");
+            PlayerLose();
         }
 
         // Cursor.
@@ -180,5 +187,22 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void PlayerWins()
+    {
+        UICanvas.SetActive(false);
+        UIWin.SetActive(true);
+        AudioObject.PlayOneShot(WinningSound);
+    }
+
+    void PlayerLose()
+    {
+        UICanvas.SetActive(false);
+        UILose.SetActive(true);
+    }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(1);
+    }
 
 }
