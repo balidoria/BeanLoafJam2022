@@ -123,7 +123,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private BasePlant GetPlantOnTile(Vector3Int gridPositionWorld)
+    public BasePlant GetPlantOnTile(Vector3Int gridPositionWorld)
     {
         var hit = Physics2D.OverlapCircle(Vector2Int.FloorToInt(new Vector2(gridPositionWorld.x, gridPositionWorld.y)), 1);
         if (hit == null)

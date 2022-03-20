@@ -30,7 +30,7 @@ public class PlantEffect : MonoBehaviour
         }
     }
 
-    public void TryCast(BasePlant originPlant)
+    public async void TryCast(BasePlant originPlant)
     {
         if (!IsCastable)
             return;
@@ -41,30 +41,41 @@ public class PlantEffect : MonoBehaviour
         var cellPosition = grid.WorldToCell(originPlant.transform.position);
 
         var plantsInRange = new List<BasePlant>();
-        for (int i = 0; i < Range; i++)
+        for (int i = 1; i <= Range; i++)
         {
-            // var right   = new Vector3Int(cellPosition.x + 1 * (int)grid.cellSize.x, cellPosition.y, 0);
-            // var left    = new Vector3Int(cellPosition.x - 1 * (int)grid.cellSize.x, cellPosition.y, 0);
-            // var up      = new Vector3Int(cellPosition.x, cellPosition.y + 1 * (int)grid.cellSize.y, 0);
-            // var down    = new Vector3Int(cellPosition.x, cellPosition.y - 1 * (int)grid.cellSize.y, 0);
-            // var upleft  = new Vector3Int(cellPosition.x - 1 * (int)grid.cellSize.x, cellPosition.y + 1 * (int)grid.cellSize.y, 0);
-            // var upright  = new Vector3Int(cellPosition.x + 1 * (int)grid.cellSize.x, cellPosition.y + 1 * (int)grid.cellSize.y, 0);
-            // var downleft = new Vector3Int(cellPosition.x - 1 * (int)grid.cellSize.x, cellPosition.y - 1 * (int)grid.cellSize.y, 0);
-            // var downright = new Vector3Int(cellPosition.x + 1 * (int)grid.cellSize.x, cellPosition.y - 1 * (int)grid.cellSize.y, 0);
+            // List<Vector3> plantsVecsInRange = new List<Vector3>(8)
+            // {
+            //     new Vector3(cellPosition.x + i * grid.cellSize.x, cellPosition.y, 0),
+            //     new Vector3(cellPosition.x - i * grid.cellSize.x, cellPosition.y, 0),
+            //     new Vector3(cellPosition.x, cellPosition.y + i * grid.cellSize.y + 1, 0),
+            //     new Vector3(cellPosition.x, cellPosition.y - i * grid.cellSize.y + 1, 0),
+            //     new Vector3(cellPosition.x - i * grid.cellSize.x + 1, cellPosition.y + i * grid.cellSize.y + 1, 0),
+            //     new Vector3(cellPosition.x + i * grid.cellSize.x - 1, cellPosition.y + i * grid.cellSize.y + 1, 0),
+            //     new Vector3(cellPosition.x - i * grid.cellSize.x + 1, cellPosition.y - i * grid.cellSize.y + 1, 0),
+            //     new Vector3(cellPosition.x + i * grid.cellSize.x - 1, cellPosition.y - i * grid.cellSize.y + 1, 0)
+            // };
 
-            List<Vector3Int> plantsAffected = new List<Vector3Int>(8)
-            {
-                new Vector3Int(cellPosition.x + i * (int)grid.cellSize.x, cellPosition.y, 0),
-                new Vector3Int(cellPosition.x - i * (int)grid.cellSize.x, cellPosition.y, 0),
-                new Vector3Int(cellPosition.x, cellPosition.y + i * (int)grid.cellSize.y, 0),
-                new Vector3Int(cellPosition.x, cellPosition.y - i * (int)grid.cellSize.y, 0),
-                new Vector3Int(cellPosition.x - i * (int)grid.cellSize.x, cellPosition.y + i * (int)grid.cellSize.y, 0),
-                new Vector3Int(cellPosition.x + i * (int)grid.cellSize.x, cellPosition.y + i * (int)grid.cellSize.y, 0),
-                new Vector3Int(cellPosition.x - i * (int)grid.cellSize.x, cellPosition.y - i * (int)grid.cellSize.y, 0),
-                new Vector3Int(cellPosition.x + i * (int)grid.cellSize.x, cellPosition.y - i * (int)grid.cellSize.y, 0)
-            };
+            var plantsAffected = new HashSet<BasePlant>();
 
-            if (!GameManager.instance.TileEmpty())
+            Debug.DrawLine(originPlant.transform.position, originPlant.transform.position + Vector3.up * 3, Color.red, 1.0f);
+            Debug.DrawLine(originPlant.transform.position, originPlant.transform.position + Vector3.down * 3, Color.red, 1.0f);
+            Debug.DrawLine(originPlant.transform.position, originPlant.transform.position + Vector3.left * 3, Color.red, 1.0f);
+            Debug.DrawLine(originPlant.transform.position, originPlant.transform.position + Vector3.right * 3, Color.red, 1.0f);
+
+            
+            var hit = Physics2D.OverlapCircleAll(Vector2Int.FloorToInt(new Vector2(originPlant.transform.position.x, originPlant.transform.position.y))
+            , 3);
+
+            // TODO: Look at this when life makes sense again after breakfast. -Elisha
+
+
+            // int j = 0;
+            // foreach (var plant in plants)
+            // {
+            //     j++;
+            //     Debug.Log(i);
+            // }
+            // if (!GameManager.instance.TileEmpty())
 
         }
 

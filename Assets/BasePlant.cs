@@ -149,8 +149,7 @@ public class BasePlant : MonoBehaviour
         // Cast spells if we are ready.
         foreach (PlantEffect spell in Effects)
         {
-            // TODO: Determine ranges.
-            // spell.TryCast(this);
+            spell.TryCast(this);
         }
     }
 
