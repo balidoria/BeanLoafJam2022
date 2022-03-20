@@ -35,6 +35,9 @@ public class BasePlant : MonoBehaviour
     // How long I have spent growing at the current stage of growth.
     private int growTimeInSeconds;
 
+    [Tooltip("Long it takes me to grow, x is lower bound y is upper bound.")]
+    public Vector2Int growTimeInSecondsRange;
+
     [Tooltip("How often I need to be watered, x is lower bound y is upper bound.")]
     public Vector2Int WateringIntervalInSeconds;
 
@@ -50,10 +53,18 @@ public class BasePlant : MonoBehaviour
     [Tooltip("How many seconds until I die after I become thirsty.")]
     public float SecondsUntilDeathWhenThirsty;
 
-    [Tooltip("How many seconds of time I need to spend growing to no longer be a baby.")]
+    [Tooltip("DEPRECATED: How many seconds of time I need to spend growing to no longer be a baby.")]
     public float SecondsGrowingSmallToMidgrown;
-    [Tooltip("How many seconds of time I need to spend growing to become completely grown.")]
+
+    [Tooltip("Range of seconds of time I need to spend growing to no longer be a baby.")]
+    public Vector2 SecondsGrowingSmallToMidgrownRange;
+
+    [Tooltip("DEPRECATED: Range of how many seconds of time I need to spend growing to become completely grown.")]
     public float SecondsGrowingMediumToGrown;
+
+    
+    [Tooltip("DEPRECATED: Range of how many seconds of time I need to spend growing to become completely grown.")]
+    public Vector2 SecondsGrowingMediumToGrownRange;
 
     [Tooltip("How many seconds of time I need to spend completely grown before I begin to lose value.")]
     public float SecondsGrownToQualityDecay;
@@ -128,6 +139,11 @@ public class BasePlant : MonoBehaviour
 
         ClearBodySprites();
         SaplingSpriteRenderer.enabled = true;
+
+        // Set ranged grow times.
+        System.Random rand = new System.Random();
+        SecondsGrowingSmallToMidgrown = SecondsGrowingSmallToMidgrownRange.x + rand.Next((int)(SecondsGrowingSmallToMidgrownRange.y - SecondsGrowingSmallToMidgrownRange.x));
+        SecondsGrowingMediumToGrown = SecondsGrowingMediumToGrownRange.x + rand.Next((int)(SecondsGrowingMediumToGrownRange.y - SecondsGrowingMediumToGrownRange.x));
 
         audioSource = FindObjectOfType<AudioSource>();
         
@@ -250,15 +266,13 @@ public class BasePlant : MonoBehaviour
             }
         }
 
- 
-             // Cast spells if we are ready.
-             foreach (PlantEffect spell in Effects)
-             {
-                 
-                    spell.TryCast(this);
-                 
-                 
-             }
+        // Cast spells if we are ready.
+        foreach (PlantEffect spell in Effects)
+        {
+            if (spell != null && this != null)
+            spell.TryCast(this); 
+        }
+
         secondsSinceLastWatered += Time.deltaTime;
     }
 
