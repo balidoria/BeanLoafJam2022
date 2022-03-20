@@ -82,6 +82,23 @@ public class BasePlant : MonoBehaviour
     public Sprite AdultSprite;
     public Sprite DeadSprite;
 
+    public ParticleSystem plantTransition;
+    public ParticleSystem waterPlant;
+    public ParticleSystem growthComplete;
+    public ParticleSystem plantDeath;
+    public ParticleSystem clearPlot;
+
+    public AudioClip plantTransitionGrowth;
+    public AudioClip plantSpecialSound;
+    public AudioClip water;
+    public AudioClip plantReady;
+    public AudioClip plantPlaced;
+    public AudioClip plantDied;
+    public AudioClip digUpPlant;
+    public AudioClip deweed;
+
+
+
     void Start()
     {
         // I don't need to be watered right away, they watered me at the store.
