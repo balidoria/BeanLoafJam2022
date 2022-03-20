@@ -103,11 +103,12 @@ public class GameManager : MonoBehaviour
             {
                 // make the plant sit on the mouse pos
                 plantBeingPlanted.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + (Vector3.forward * 10);
-
+                plantBeingPlanted.SaplingSpriteRenderer.transform.localScale = Vector3.one * 2;
                 if (Input.GetMouseButtonUp(0))
                 {
                     plantBeingPlanted.transform.position = GameGrid.GetCellCenterWorld(gridPosition);
                     plantBeingPlanted.IsPlanted = true;
+                    plantBeingPlanted.SaplingSpriteRenderer.transform.localScale = Vector3.one;
                     storeManager.PlantPlanted(plantBeingPlanted);
                     plantBeingPlanted.Status = PlantStatus.GROWING;
                     c2d.enabled = true;
