@@ -24,6 +24,8 @@ public class BasePlant : MonoBehaviour
     public int StorePrice;
     [Tooltip("How much the player gets when they sell me.")]
     public int SellPrice;
+    [Tooltip("How much the player gets when they sell me at my WORST.")]
+    public int BottomSellPrice = 10;
 
     private int OriginalSellPrice;
 
@@ -237,13 +239,13 @@ public class BasePlant : MonoBehaviour
             }
         }
 
-        // Decay in value if we've been Grown too long.
-        if (Status == PlantStatus.GROWN)
+        // Decay in value if we've been Grown too long, stopping if sell value hits zero.
+        if (Status == PlantStatus.GROWN && SellPrice > BottomSellPrice)
         {
             secondsSpentGrowing += Time.deltaTime;
             if (secondsSpentGrowing >= SecondsGrownToQualityDecay)
             {
-                SellPrice = OriginalSellPrice - (int)(OriginalSellPrice * 0.5f * ((secondsSpentGrowing - SecondsGrownToQualityDecay) / SecondsUntilLowestQuality));
+                SellPrice = Mathf.Clamp(OriginalSellPrice - (int)(OriginalSellPrice * 0.5f * ((secondsSpentGrowing - SecondsGrownToQualityDecay) / SecondsUntilLowestQuality)), BottomSellPrice, int.MaxValue);
             }
         }
 
@@ -363,6 +365,9 @@ public class BasePlant : MonoBehaviour
         var clear = Instantiate(clearPlot, new Vector3(this.transform.position.x,this.transform.position.y, -particleZOffset), Quaternion.identity);
         clear.transform.parent = this.transform;
         clearPlot.Play();
+
+        // tell gamemanager we are without this plant
+        GameManager.instance.numOfActivePlants--;
 
         // Remove this plant from existence.
         Debug.Log("Remvoing: " + this.ToString());
