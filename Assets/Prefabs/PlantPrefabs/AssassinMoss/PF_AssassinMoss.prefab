@@ -128,10 +128,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35d23569c58005a4f8237fed8793d1c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsBetweenCasting: 10
-  type: 0
+  SecondsBetweenCastingRange: {x: 0, y: 0}
   target: 1
   effectAdjustment: 1
+  Range: 0
 --- !u!1 &5144651309241912702
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,14 +193,15 @@ MonoBehaviour:
   SecondsGrowingMediumToGrown: 11
   SecondsGrownToQualityDecay: 7
   SecondsUntilLowestQuality: 35
+  particleZOffset: 3
   chanceOfWeededness: 13
   ThirstNotification: {fileID: 2343120650391897836}
   PlantBody: {fileID: 5144651309241912699}
   Weeds: {fileID: 110111520583912388}
-  SaplingSprite: {fileID: 21300000, guid: 7f4588ecc7a601e46b0c4269e509ff9f, type: 3}
-  JuvenileSprite: {fileID: 21300000, guid: 7d307a6faa2c7654da5498722ca33867, type: 3}
-  AdultSprite: {fileID: 21300000, guid: f4ef8bc8715fde44cb01f7a9605014ee, type: 3}
-  DeadSprite: {fileID: 0}
+  SaplingSpriteRenderer: {fileID: 0}
+  JuvenileSpriteRenderer: {fileID: 0}
+  AdultSpriteRenderer: {fileID: 0}
+  DeadSpriteRenderer: {fileID: 0}
   plantTransition: {fileID: 2766463458845916146, guid: 4d275c3d7594b254cb77752aa8aef08e, type: 3}
   waterPlant: {fileID: 2465896208881292616, guid: e5497a9bd0106e94e845e22839b39d02, type: 3}
   growthComplete: {fileID: 4469924716007554643, guid: f858a701e58062d479a0e8e3792dc40d, type: 3}
@@ -341,10 +342,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35d23569c58005a4f8237fed8793d1c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsBetweenCasting: 5
-  type: 0
+  SecondsBetweenCastingRange: {x: 0, y: 0}
   target: 2
   effectAdjustment: 1
+  Range: 0
 --- !u!1 &5359056941070419891
 GameObject:
   m_ObjectHideFlags: 0
