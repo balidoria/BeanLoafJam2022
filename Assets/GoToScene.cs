@@ -9,4 +9,9 @@ public class GoToScene : MonoBehaviour
     {
         SceneManager.LoadScene(sceneNumber);
     }
+
+    public void EndGame()
+    {
+        Application.Quit();
+    }
 }
