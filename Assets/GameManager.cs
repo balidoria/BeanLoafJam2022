@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         playerMoney = playerStartingMoney;
+        UIMoneyText.text = playerMoney.ToString();
         numOfActivePlants = 0;
 
         UIWin.SetActive(false);
@@ -227,12 +228,16 @@ public class GameManager : MonoBehaviour
     {
         UIMoneyText.text = start.ToString();
         float timer = 0;
-        while (timer < 1)
+        if (start < end)
         {
-            timer += Time.deltaTime;
-            yield return null;
+            while (timer < 1)
+            {
+                timer += Time.deltaTime;
+                yield return null;
+            }
+            timer = 0;
         }
-        timer = 0;
+
         while (timer < moneyAnimDuration)
         {
             int temp = (int)Mathf.Lerp(start, end, moneyAnimCurve.Evaluate(timer / moneyAnimDuration));
