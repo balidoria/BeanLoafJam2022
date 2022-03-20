@@ -184,7 +184,7 @@ public class BasePlant : MonoBehaviour
             if(!IsWatered)
             {
                 IsWatered = true;
-                audioSource.PlayOneShot(thirsty,0.3f);
+                audioSource.PlayOneShot(thirsty,0.75f);
             }
             Status = PlantStatus.THIRSTY;
             ThirstNotification.enabled = true;
@@ -258,7 +258,7 @@ public class BasePlant : MonoBehaviour
                  }
                  
              }
-       
+        secondsSinceLastWatered += Time.deltaTime;
     }
 
     internal void rollForWeeds()
@@ -317,7 +317,7 @@ public class BasePlant : MonoBehaviour
         //effects and sounds
         audioSource.PlayOneShot(sellPlant,0.3f);
         var moneyPartlices = Instantiate(money, new Vector3(this.transform.position.x,this.transform.position.y, -particleZOffset), Quaternion.identity);
-        moneyPartlices.transform.parent = this.transform;
+        //moneyPartlices.transform.parent = this.transform;
         money.Play();
 
         GameManager.instance.PlayerSellPlant(this);
