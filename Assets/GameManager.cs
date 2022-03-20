@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,6 +27,8 @@ public class GameManager : MonoBehaviour
     public Tilemap GameTileMap;
     public Tilemap UITileMap;
     public Tile UIHighlightTile;
+    public TMP_Text UIMoneyText;
+    public Slider UIFundraiser;
     private Vector3Int UIHighlightTilePosition = Vector3Int.zero;
 
     // The plant we can currently plant.
@@ -48,6 +52,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        //Update money text
+        UIMoneyText.text = playerMoney.ToString();
+        UIFundraiser.value = playerMoney;
+
         // Ending the game.
         if (playerMoney >= goalMoney)
         {
