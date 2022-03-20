@@ -16,30 +16,17 @@ public class StoreManager : MonoBehaviour
          KeyCode.Alpha8,
          KeyCode.Alpha9,
      };
-     // TEMP END
+    // TEMP END
 
-    void Start()
+    [Tooltip("The plants for sale in the store.")]
+    public List<BasePlant> plantsForSale;
+
+
+    public void BuyPlant(int plantNum)
     {
+        if (plantNum < plantsForSale.Count)
+            PlayerBuyPlant(plantsForSale[plantNum]);
         
-    }
-
-    void Update()
-    {
-        // TEMP DEBUG
-        for(int i = 0 ; i < keyCodes.Length; i ++ )
-        {
-            if(Input.GetKeyDown(keyCodes[i]))
-            {
-                try
-                {
-                    PlayerBuyPlant(plantsForSale[i]);
-                } catch (System.Exception e) 
-                {
-                    Debug.Log(e.ToString() + ": No plant on sale for index: " + i);
-                }
-            }
-        }
-        // TEMP END
     }
 
     public void PlayerBuyPlant(BasePlant plant)
@@ -65,7 +52,6 @@ public class StoreManager : MonoBehaviour
         }
     }
  
-    [Tooltip("The plants for sale in the store.")]
-    public List<BasePlant> plantsForSale;
+
 }
 
