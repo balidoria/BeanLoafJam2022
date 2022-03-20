@@ -24,16 +24,24 @@ public class StoreManager : MonoBehaviour
 
     public void BuyPlant(int plantNum)
     {
+        // check to see if the index num of the requested plant exists
         if (plantNum < plantsForSale.Count)
-            PlayerBuyPlant(plantsForSale[plantNum]);
-        
+            PlayerBuyPlant(plantsForSale[plantNum]);        
     }
 
     public void PlayerBuyPlant(BasePlant plant)
     {
+        // check if we got cash to burn
         if (GameManager.instance.playerMoney >= plant.StorePrice)
         {
-            GameManager.instance.playerMoney -= plant.StorePrice;
+            // make sure we clean up any 'pending planting' plants
+            if (GameManager.instance.plantBeingPlanted != null)
+            {
+                Destroy(GameManager.instance.plantBeingPlanted.gameObject);
+                GameManager.instance.plantBeingPlanted = null;
+            }
+
+            //GameManager.instance.playerMoney -= plant.StorePrice;
             GameManager.instance.plantBeingPlanted = Instantiate(plant);
             var renderers = GameManager.instance.plantBeingPlanted.GetComponentsInChildren<SpriteRenderer>();
             foreach (var sr in renderers)
@@ -50,5 +58,10 @@ public class StoreManager : MonoBehaviour
             // TODO: Show player they can't afford the plant.
             Debug.Log("Too poor to buy " + plant.ToString() + " for " + plant.StorePrice);
         }
+    }
+
+    public void PlantPlanted(BasePlant plant)
+    {
+        GameManager.instance.playerMoney -= plant.StorePrice;
     }
 }
