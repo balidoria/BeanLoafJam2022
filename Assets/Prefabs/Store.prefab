@@ -1855,7 +1855,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5144651310326187164, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: Range
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5144651310326187164, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: effectAdjustment
@@ -2476,7 +2476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5144651310326187164, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: Range
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5144651310326187164, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: target
