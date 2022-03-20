@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,6 +27,8 @@ public class GameManager : MonoBehaviour
     public Tilemap GameTileMap;
     public Tilemap UITileMap;
     public Tile UIHighlightTile;
+    public TMP_Text UIMoneyText;
+    public Slider UIFundraiser;
     private Vector3Int UIHighlightTilePosition = Vector3Int.zero;
 
     // The plant we can currently plant.
@@ -48,6 +52,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        //Update money text
+        UIMoneyText.text = playerMoney.ToString();
+        UIFundraiser.value = playerMoney;
+
         // Ending the game.
         if (playerMoney >= goalMoney)
         {
@@ -123,7 +131,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private BasePlant GetPlantOnTile(Vector3Int gridPositionWorld)
+    public BasePlant GetPlantOnTile(Vector3Int gridPositionWorld)
     {
         var hit = Physics2D.OverlapCircle(Vector2Int.FloorToInt(new Vector2(gridPositionWorld.x, gridPositionWorld.y)), 1);
         if (hit == null)
@@ -132,7 +140,7 @@ public class GameManager : MonoBehaviour
         return hit.GetComponentInChildren<BasePlant>();
     }
 
-    private bool TileEmpty(Vector3 gridPositionWorld)
+    public bool TileEmpty(Vector3 gridPositionWorld)
     {
         var hit = Physics2D.OverlapCircle(Vector2Int.FloorToInt(new Vector2(gridPositionWorld.x, gridPositionWorld.y)), 1);
         if (hit != null && hit.GetComponentInChildren<BasePlant>() != null)
@@ -151,7 +159,6 @@ public class GameManager : MonoBehaviour
             Debug.Log("Sold " + plant.ToString() + " for " + plant.SellPrice);
         } else
         {
-            // TODO: No sale!
             Debug.Log("Tried to sell " + plant.ToString() + " but it was not fully grown!");
         }
     }

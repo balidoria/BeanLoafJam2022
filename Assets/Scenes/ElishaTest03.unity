@@ -123,6 +123,22 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &97407683 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5144651308933951318, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+  m_PrefabInstance: {fileID: 1058348683}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &97407686 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5144651308933951319, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+  m_PrefabInstance: {fileID: 1058348683}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ac3815085c525c4f808989d753201ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &361098153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -858,9 +874,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1190925342525167573, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: plantsForSale.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190925342525167573, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: plantsForSale.Array.data[0]
       value: 
       objectReference: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
+    - target: {fileID: 1190925342525167573, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: plantsForSale.Array.data[1]
+      value: 
+      objectReference: {fileID: 97407686}
     - target: {fileID: 1190925342525167579, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: m_Name
       value: Store
@@ -909,9 +933,101 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5144651308636008916, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: m_Name
+      value: AssassinMossEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651308636008918, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: Range
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651308636008918, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: effectAdjustment
+      value: 1.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651308636008918, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: secondsBetweenCasting
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651308933951313, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: m_Size.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651308933951313, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5144651308933951317, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651308933951319, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: Weeds
+      value: 
+      objectReference: {fileID: 1343085443}
+    - target: {fileID: 5144651308933951319, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: Effects.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651308933951319, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: Effects.Array.data[0]
+      value: 
+      objectReference: {fileID: 1604312219}
+    - target: {fileID: 5144651308933951319, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: Effects.Array.data[1]
+      value: 
+      objectReference: {fileID: 1643168503}
+    - target: {fileID: 5144651308933951319, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: Effects.Array.data[2]
+      value: 
+      objectReference: {fileID: 1639057888}
+    - target: {fileID: 5144651308933951319, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsUntilLowestQuality
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651308933951319, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsGrownToQualityDecay
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651308933951319, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsGrowingMediumToGrown
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651308933951319, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: WateringIntervalInSeconds.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651308933951319, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: WateringIntervalInSeconds.y
+      value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651308933951319, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsUntilDeathWhenThirsty
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651308933951319, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsGrowingSmallToMidgrown
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651310034904757, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: m_Name
+      value: SneezingFluxRootEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651310034904759, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: Range
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651310034904759, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: target
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651310034904759, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: effectAdjustment
+      value: 1.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651310034904759, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: secondsBetweenCasting
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
@@ -977,6 +1093,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1343085443 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 178136652, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+  m_PrefabInstance: {fileID: 1058348683}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1595852980
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1053,8 +1174,82 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1058348684}
     - target: {fileID: 4302945241000381568, guid: ff2d4d5a5500b814c9c44c4d1c791257, type: 3}
+      propertyPath: playerStartingMoney
+      value: 4999
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302945241000381568, guid: ff2d4d5a5500b814c9c44c4d1c791257, type: 3}
       propertyPath: SecondsBetweenWeedRolls
       value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff2d4d5a5500b814c9c44c4d1c791257, type: 3}
+--- !u!114 &1604312219 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5144651310034904759, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+  m_PrefabInstance: {fileID: 1058348683}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35d23569c58005a4f8237fed8793d1c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1639057886
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1639057887}
+  - component: {fileID: 1639057888}
+  m_Layer: 0
+  m_Name: ScreamingTouchMeNotEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1639057887
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639057886}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 97407683}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1639057888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639057886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35d23569c58005a4f8237fed8793d1c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SecondsBetweenCastingRange: {x: 5, y: 10}
+  target: 2
+  effectAdjustment: 1
+  Range: 1
+--- !u!114 &1643168503 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5144651308636008918, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+  m_PrefabInstance: {fileID: 1058348683}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35d23569c58005a4f8237fed8793d1c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

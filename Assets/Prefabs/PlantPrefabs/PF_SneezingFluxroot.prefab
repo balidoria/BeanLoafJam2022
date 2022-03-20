@@ -270,7 +270,7 @@ MonoBehaviour:
   SellPrice: 65
   Effects:
   - {fileID: 0}
-  WateringIntervalInSeconds: 13
+  WateringIntervalInSeconds: {x: 10, y: 13}
   Size: 0
   Status: 0
   SecondsUntilDeathWhenThirsty: 6
@@ -278,7 +278,7 @@ MonoBehaviour:
   SecondsGrowingMediumToGrown: 9
   SecondsGrownToQualityDecay: 15
   SecondsUntilLowestQuality: 35
-  chanceOfWeededness: 0
+  chanceOfWeededness: 30
   ThirstNotification: {fileID: 5283547697964709966}
   PlantBody: {fileID: 5144651309241912699}
   Weeds: {fileID: 5057101314178959958}
@@ -286,6 +286,24 @@ MonoBehaviour:
   JuvenileSprite: {fileID: 21300000, guid: 951524ce050d32742bfe62d855a76e2f, type: 3}
   AdultSprite: {fileID: 21300000, guid: 595d2285c971fb648ab07e4e6782b6ac, type: 3}
   DeadSprite: {fileID: 0}
+  plantTransition: {fileID: 2766463458845916146, guid: 4d275c3d7594b254cb77752aa8aef08e, type: 3}
+  waterPlant: {fileID: 2465896208881292616, guid: e5497a9bd0106e94e845e22839b39d02, type: 3}
+  growthComplete: {fileID: 4469924716007554643, guid: f858a701e58062d479a0e8e3792dc40d, type: 3}
+  plantDeath: {fileID: 1646195173293365559, guid: 902dff66ba2161e49a64a2adf8c7484f, type: 3}
+  clearPlot: {fileID: 2766463458845916146, guid: 36b50cc97635a8e4ebe2171aa9965c3c, type: 3}
+  money: {fileID: 5587682952014805528, guid: 6b4f2f5d79f33ad40adac3eb56a33388, type: 3}
+  plantTransitionGrowth: {fileID: 8300000, guid: 9acf97e3593e5bc4e87a7691cb1d6128, type: 3}
+  plantSpecialSound: {fileID: 8300000, guid: 51bdf12a9a2d5724ea8844696eb912cb, type: 3}
+  water: {fileID: 8300000, guid: c7a45eaa44404ef4bbfc5d34bd9d2349, type: 3}
+  plantReady: {fileID: 8300000, guid: 4a7ebbcb8dde59e458cc3c396e6edf4f, type: 3}
+  plantPlaced: {fileID: 8300000, guid: cfc1ba175e102604998768526a62b691, type: 3}
+  plantDied: {fileID: 8300000, guid: 77c3dab9b25afa246a402df53887291f, type: 3}
+  digUpPlant: {fileID: 8300000, guid: e97ff45a001963f4aaa8aab2ff28ab8b, type: 3}
+  deweed: {fileID: 8300000, guid: 6fc753da56386d646ba92ff90c105646, type: 3}
+  sellPlant: {fileID: 8300000, guid: 817f4f4bf36e42e4f8f1873edb89370c, type: 3}
+  thirsty: {fileID: 8300000, guid: 1986fefcb4e3fbb4eb858288c6ae5532, type: 3}
+  audioSource: {fileID: 0}
+  specialAudioPlant: 0
 --- !u!61 &5144651309241912698
 BoxCollider2D:
   m_ObjectHideFlags: 0
