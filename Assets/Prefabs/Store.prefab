@@ -1186,28 +1186,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: c10f4991ba60bad4ca2301a734e0742b, type: 3}
+      propertyPath: thirsty
+      value: 
+      objectReference: {fileID: 8300000, guid: 52939a250ddd20f46a2195d7df6adfc3, type: 3}
+    - target: {fileID: 5144651309241912700, guid: c10f4991ba60bad4ca2301a734e0742b, type: 3}
+      propertyPath: SellPrice
+      value: 175
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: c10f4991ba60bad4ca2301a734e0742b, type: 3}
       propertyPath: chanceOfWeededness
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: c10f4991ba60bad4ca2301a734e0742b, type: 3}
       propertyPath: SecondsGrownToQualityDecay
-      value: 42
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: c10f4991ba60bad4ca2301a734e0742b, type: 3}
       propertyPath: SecondsGrowingMediumToGrown
-      value: 24
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: c10f4991ba60bad4ca2301a734e0742b, type: 3}
       propertyPath: WateringIntervalInSeconds.x
-      value: 4
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: c10f4991ba60bad4ca2301a734e0742b, type: 3}
       propertyPath: WateringIntervalInSeconds.y
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: c10f4991ba60bad4ca2301a734e0742b, type: 3}
       propertyPath: SecondsGrowingSmallToMidgrown
-      value: 15
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912701, guid: c10f4991ba60bad4ca2301a734e0742b, type: 3}
       propertyPath: m_RootOrder
@@ -1401,28 +1409,36 @@ PrefabInstance:
       value: 1.8550003
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
+      propertyPath: thirsty
+      value: 
+      objectReference: {fileID: 8300000, guid: 52939a250ddd20f46a2195d7df6adfc3, type: 3}
+    - target: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
+      propertyPath: SellPrice
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
       propertyPath: chanceOfWeededness
       value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
       propertyPath: SecondsGrownToQualityDecay
-      value: 11
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
       propertyPath: SecondsGrowingMediumToGrown
-      value: 17
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
       propertyPath: WateringIntervalInSeconds.x
-      value: 5
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
       propertyPath: WateringIntervalInSeconds.y
-      value: 7
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
       propertyPath: SecondsGrowingSmallToMidgrown
-      value: 12
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912701, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
       propertyPath: m_RootOrder
@@ -1558,6 +1574,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: thirsty
+      value: 
+      objectReference: {fileID: 8300000, guid: 52939a250ddd20f46a2195d7df6adfc3, type: 3}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: SellPrice
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: DeadSpriteRenderer
       value: 
       objectReference: {fileID: 46134379}
@@ -1579,23 +1603,23 @@ PrefabInstance:
       objectReference: {fileID: 737134465}
     - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: SecondsGrownToQualityDecay
-      value: 22
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: SecondsGrowingMediumToGrown
-      value: 14
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: WateringIntervalInSeconds.x
-      value: 6
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: WateringIntervalInSeconds.y
-      value: 10
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: SecondsGrowingSmallToMidgrown
-      value: 18
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912701, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: m_RootOrder
@@ -1651,7 +1675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5144651310326187164, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: effectAdjustment
-      value: 1.25
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5144651310326187166, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: m_Name
@@ -1771,6 +1795,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: d1014f02a4ace8d48900e9ffab5203f7, type: 3}
+      propertyPath: thirsty
+      value: 
+      objectReference: {fileID: 8300000, guid: 52939a250ddd20f46a2195d7df6adfc3, type: 3}
+    - target: {fileID: 5144651309241912700, guid: d1014f02a4ace8d48900e9ffab5203f7, type: 3}
+      propertyPath: SellPrice
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: d1014f02a4ace8d48900e9ffab5203f7, type: 3}
       propertyPath: DeadSpriteRenderer
       value: 
       objectReference: {fileID: 1617887390}
@@ -1792,19 +1824,23 @@ PrefabInstance:
       objectReference: {fileID: 158285387}
     - target: {fileID: 5144651309241912700, guid: d1014f02a4ace8d48900e9ffab5203f7, type: 3}
       propertyPath: SecondsGrownToQualityDecay
-      value: 12
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: d1014f02a4ace8d48900e9ffab5203f7, type: 3}
       propertyPath: SecondsGrowingMediumToGrown
-      value: 9
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: d1014f02a4ace8d48900e9ffab5203f7, type: 3}
       propertyPath: WateringIntervalInSeconds.x
-      value: 3
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: d1014f02a4ace8d48900e9ffab5203f7, type: 3}
+      propertyPath: WateringIntervalInSeconds.y
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: d1014f02a4ace8d48900e9ffab5203f7, type: 3}
       propertyPath: SecondsGrowingSmallToMidgrown
-      value: 6
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912701, guid: d1014f02a4ace8d48900e9ffab5203f7, type: 3}
       propertyPath: m_RootOrder
@@ -1985,6 +2021,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: thirsty
+      value: 
+      objectReference: {fileID: 8300000, guid: 52939a250ddd20f46a2195d7df6adfc3, type: 3}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: SellPrice
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: StorePrice
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: DeadSpriteRenderer
       value: 
       objectReference: {fileID: 782105003}
@@ -2006,19 +2054,23 @@ PrefabInstance:
       objectReference: {fileID: 1483357172}
     - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: SecondsGrownToQualityDecay
-      value: 23
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: SecondsGrowingMediumToGrown
-      value: 18
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: WateringIntervalInSeconds.x
-      value: 5
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: WateringIntervalInSeconds.y
-      value: 10
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: SecondsGrowingSmallToMidgrown
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912701, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: m_RootOrder
@@ -2179,6 +2231,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
+      propertyPath: thirsty
+      value: 
+      objectReference: {fileID: 8300000, guid: 52939a250ddd20f46a2195d7df6adfc3, type: 3}
+    - target: {fileID: 5144651309241912700, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
+      propertyPath: SellPrice
+      value: 85
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
       propertyPath: DeadSpriteRenderer
       value: 
       objectReference: {fileID: 1283310623}
@@ -2200,23 +2260,23 @@ PrefabInstance:
       objectReference: {fileID: 783634791}
     - target: {fileID: 5144651309241912700, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
       propertyPath: SecondsGrownToQualityDecay
-      value: 22
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
       propertyPath: SecondsGrowingMediumToGrown
-      value: 18
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
       propertyPath: WateringIntervalInSeconds.x
-      value: 7
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
       propertyPath: WateringIntervalInSeconds.y
-      value: 8
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
       propertyPath: SecondsGrowingSmallToMidgrown
-      value: 10
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912701, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
       propertyPath: m_RootOrder
@@ -2303,8 +2363,16 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7887324484234444943, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
+      propertyPath: m_Bounds.m_Center.x
+      value: 0.00000011920929
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887324484234444943, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
       propertyPath: m_Bounds.m_Center.y
       value: 1.0882947
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887324484234444943, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
+      propertyPath: m_Bounds.m_Extent.x
+      value: 0.77999985
       objectReference: {fileID: 0}
     - target: {fileID: 7887324484234444943, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
       propertyPath: m_Bounds.m_Extent.y
