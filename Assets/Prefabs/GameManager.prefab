@@ -46,11 +46,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storeManager: {fileID: 0}
   playerMoney: 0
-  playerStartingMoney: 50
-  goalMoney: 500
+  playerStartingMoney: 100
+  goalMoney: 5000
   GameGrid: {fileID: 0}
   GameTileMap: {fileID: 0}
   UITileMap: {fileID: 0}
   UIHighlightTile: {fileID: 11400000, guid: 8c75229c9121132458cc22d9189e43e5, type: 2}
   MainCamera: {fileID: 0}
-  SecondsBetweenWeedRolls: 0
+  SecondsBetweenWeedRolls: 60
