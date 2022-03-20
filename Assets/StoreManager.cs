@@ -32,7 +32,7 @@ public class StoreManager : MonoBehaviour
     public void PlayerBuyPlant(BasePlant plant)
     {
         // check if we got cash to burn
-        if (GameManager.instance.playerMoney >= plant.StorePrice)
+        if (GameManager.instance.playerMoney >= plant.StorePrice && GameManager.instance.numOfActivePlants < 25)
         {
             // make sure we clean up any 'pending planting' plants
             if (GameManager.instance.plantBeingPlanted != null)
