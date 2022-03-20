@@ -25,7 +25,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] internal int goalMoney;
 
     [Tooltip("Do not set! keeps track of the number of plants.")]
-    public int numOfActivePlants = 0; 
+    public int numOfActivePlants = 0;
+
+    [Header("Money Counter Animation")]
+    public float moneyAnimDuration;
+    public AnimationCurve moneyAnimCurve;
 
     public Grid GameGrid;
     public Tilemap GameTileMap;
@@ -39,6 +43,7 @@ public class GameManager : MonoBehaviour
     public AudioSource AudioObject;
     public AudioClip WinningSound;
     private Vector3Int UIHighlightTilePosition = Vector3Int.zero;
+    bool ended = false;
 
     // The plant we can currently plant.
     internal BasePlant plantBeingPlanted = null;
@@ -49,7 +54,6 @@ public class GameManager : MonoBehaviour
     public float SecondsBetweenWeedRolls;
 
     private float secondsSinceLastWeedRoll;
-
     void Awake() {
         instance = this;
     }
@@ -65,19 +69,19 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        //Update money text
-        UIMoneyText.text = playerMoney.ToString();
-        UIFundraiser.value = playerMoney;
-
         // Ending the game.
-        if (playerMoney >= goalMoney)
+        if (!ended)
         {
-            PlayerWins();
+            if (playerMoney >= goalMoney)
+            {
+                PlayerWins();
+            }
+            if (playerMoney < 10 && numOfActivePlants == 0)
+            {
+                PlayerLose();
+            }
         }
-        if (playerMoney < 10 && numOfActivePlants == 0)
-        {
-            PlayerLose();
-        }
+
 
         // Cursor.
         Vector3Int gridPosition = GameGrid.WorldToCell(MainCamera.ScreenToWorldPoint(Input.mousePosition));
@@ -97,13 +101,12 @@ public class GameManager : MonoBehaviour
         if (plantBeingPlanted != null)
         {
             var c2d = plantBeingPlanted.GetComponent<Collider2D>();
-            c2d.enabled = false;
+            c2d.enabled = false;                // make the plant sit on the mouse pos
+            plantBeingPlanted.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + (Vector3.forward * 10);
+            plantBeingPlanted.SaplingSpriteRenderer.transform.localScale = Vector3.one * 2;
 
             if (GameTileMap.HasTile(gridPosition) && TileEmpty(GameGrid.GetCellCenterWorld(gridPosition)))
             {
-                // make the plant sit on the mouse pos
-                plantBeingPlanted.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + (Vector3.forward * 10);
-                plantBeingPlanted.SaplingSpriteRenderer.transform.localScale = Vector3.one * 2;
                 if (Input.GetMouseButtonUp(0))
                 {
                     plantBeingPlanted.transform.position = GameGrid.GetCellCenterWorld(gridPosition);
@@ -124,12 +127,12 @@ public class GameManager : MonoBehaviour
                     
                     plantBeingPlanted = null;
                 }
+            }
 
-                if (Input.GetMouseButtonUp(1) || Input.GetKeyDown(KeyCode.Escape))
-                {
-                    Destroy(plantBeingPlanted.gameObject);
-                    plantBeingPlanted = null;
-                }
+            if (Input.GetMouseButtonUp(1) || Input.GetKeyDown(KeyCode.Escape))
+            {
+                Destroy(plantBeingPlanted.gameObject);
+                plantBeingPlanted = null;
             }
         }
 
@@ -180,7 +183,8 @@ public class GameManager : MonoBehaviour
     {
         if (plant.Status == PlantStatus.GROWN)
         {
-            GameManager.instance.playerMoney += plant.SellPrice;
+            //GameManager.instance.playerMoney += plant.SellPrice;
+            UpdatePlayerMoney(plant.SellPrice);
             Debug.Log("Sold " + plant.ToString() + " for " + plant.SellPrice);
         } else
         {
@@ -190,6 +194,7 @@ public class GameManager : MonoBehaviour
 
     void PlayerWins()
     {
+        ended = true;
         UICanvas.SetActive(false);
         UIWin.SetActive(true);
         AudioObject.PlayOneShot(WinningSound);
@@ -197,6 +202,7 @@ public class GameManager : MonoBehaviour
 
     void PlayerLose()
     {
+        ended = true;
         UICanvas.SetActive(false);
         UILose.SetActive(true);
     }
@@ -204,6 +210,38 @@ public class GameManager : MonoBehaviour
     public void ReloadScene()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void UpdatePlayerMoney(int amount)
+    {
+        StopAllCoroutines();
+        int start = playerMoney;
+        int end = playerMoney + amount;
+
+        playerMoney += amount;
+
+        StartCoroutine(DoUpdatePlayerMoney(start, end));
+    }
+
+    IEnumerator DoUpdatePlayerMoney(int start, int end)
+    {
+        UIMoneyText.text = start.ToString();
+        float timer = 0;
+        while (timer < 1)
+        {
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        timer = 0;
+        while (timer < moneyAnimDuration)
+        {
+            int temp = (int)Mathf.Lerp(start, end, moneyAnimCurve.Evaluate(timer / moneyAnimDuration));
+            UIMoneyText.text = temp.ToString();
+            UIFundraiser.value = temp;
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        UIMoneyText.text = end.ToString();
     }
 
 }

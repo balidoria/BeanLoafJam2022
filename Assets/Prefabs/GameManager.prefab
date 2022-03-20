@@ -48,9 +48,42 @@ MonoBehaviour:
   playerMoney: 0
   playerStartingMoney: 100
   goalMoney: 5000
+  numOfActivePlants: 0
+  moneyAnimDuration: 1
+  moneyAnimCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 27.357576
+      outSlope: 27.357576
+      tangentMode: 0
+      weightedMode: 2
+      inWeight: 0
+      outWeight: 0.036637932
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   GameGrid: {fileID: 0}
   GameTileMap: {fileID: 0}
   UITileMap: {fileID: 0}
   UIHighlightTile: {fileID: 11400000, guid: 8c75229c9121132458cc22d9189e43e5, type: 2}
+  UIMoneyText: {fileID: 0}
+  UIFundraiser: {fileID: 0}
+  UICanvas: {fileID: 0}
+  UIWin: {fileID: 0}
+  UILose: {fileID: 0}
+  AudioObject: {fileID: 0}
+  WinningSound: {fileID: 0}
   MainCamera: {fileID: 0}
   SecondsBetweenWeedRolls: 60

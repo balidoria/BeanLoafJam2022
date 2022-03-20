@@ -999,6 +999,54 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5144651308863338590, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: coin
+      value: 
+      objectReference: {fileID: 5050019127552229586, guid: 2a7b1a3a35fd79645bb2e599354b5771, type: 3}
+    - target: {fileID: 5144651308863338590, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: coinTarget
+      value: 
+      objectReference: {fileID: 2046958251}
+    - target: {fileID: 5144651309216037101, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: coin
+      value: 
+      objectReference: {fileID: 5050019127552229586, guid: 2a7b1a3a35fd79645bb2e599354b5771, type: 3}
+    - target: {fileID: 5144651309216037101, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: coinTarget
+      value: 
+      objectReference: {fileID: 2046958251}
+    - target: {fileID: 5144651309520475158, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: coin
+      value: 
+      objectReference: {fileID: 5050019127552229586, guid: 2a7b1a3a35fd79645bb2e599354b5771, type: 3}
+    - target: {fileID: 5144651309520475158, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: coinTarget
+      value: 
+      objectReference: {fileID: 2046958251}
+    - target: {fileID: 5144651309564259746, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: coin
+      value: 
+      objectReference: {fileID: 5050019127552229586, guid: 2a7b1a3a35fd79645bb2e599354b5771, type: 3}
+    - target: {fileID: 5144651309564259746, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: coinTarget
+      value: 
+      objectReference: {fileID: 2046958251}
+    - target: {fileID: 5144651309844064994, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: coin
+      value: 
+      objectReference: {fileID: 5050019127552229586, guid: 2a7b1a3a35fd79645bb2e599354b5771, type: 3}
+    - target: {fileID: 5144651309844064994, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: coinTarget
+      value: 
+      objectReference: {fileID: 2046958251}
+    - target: {fileID: 5144651310377639230, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: coin
+      value: 
+      objectReference: {fileID: 5050019127552229586, guid: 2a7b1a3a35fd79645bb2e599354b5771, type: 3}
+    - target: {fileID: 5144651310377639230, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: coinTarget
+      value: 
+      objectReference: {fileID: 2046958251}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
 --- !u!114 &1058348684 stripped

@@ -63,6 +63,6 @@ public class StoreManager : MonoBehaviour
 
     public void PlantPlanted(BasePlant plant)
     {
-        GameManager.instance.playerMoney -= plant.StorePrice;
+        GameManager.instance.UpdatePlayerMoney(-plant.StorePrice);
     }
 }
