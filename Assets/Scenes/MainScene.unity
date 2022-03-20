@@ -999,6 +999,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5144651308436168180, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: m_Name
+      value: ScreamingEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651308436168182, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: target
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651308436168182, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: effectAdjustment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651308436168182, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsBetweenCastingRange.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651308436168182, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsBetweenCastingRange.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309520475158, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: Effects.Array.data[0]
+      value: 
+      objectReference: {fileID: 1253929846}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
 --- !u!114 &1058348684 stripped
@@ -1233,6 +1257,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39fbe2240b97de04193221feb7d8c3dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1253929846 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5144651308436168182, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+  m_PrefabInstance: {fileID: 1058348683}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35d23569c58005a4f8237fed8793d1c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1339033090
