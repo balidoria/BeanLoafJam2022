@@ -94,10 +94,13 @@ public class GameManager : MonoBehaviour
 
             if (GameTileMap.HasTile(gridPosition) && TileEmpty(GameGrid.GetCellCenterWorld(gridPosition)))
             {
-                plantBeingPlanted.transform.position = GameGrid.GetCellCenterWorld(gridPosition);
+                // make the plant sit on the mouse pos
+                plantBeingPlanted.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + (Vector3.forward * 10);
                 if (Input.GetMouseButtonUp(0))
                 {
+                    plantBeingPlanted.transform.position = GameGrid.GetCellCenterWorld(gridPosition);
                     plantBeingPlanted.IsPlanted = true;
+                    storeManager.PlantPlanted(plantBeingPlanted);
                     plantBeingPlanted.Status = PlantStatus.GROWING;
                     c2d.enabled = true;
                     var renderers = plantBeingPlanted.GetComponentsInChildren<SpriteRenderer>();
