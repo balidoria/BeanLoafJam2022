@@ -109,7 +109,7 @@ MonoBehaviour:
   SecondsGrowingMediumToGrown: 6
   SecondsGrownToQualityDecay: 6
   SecondsUntilLowestQuality: 5
-  chanceOfWeededness: 0
+  chanceOfWeededness: 80
   ThirstNotification: {fileID: 2398393355305131122}
   PlantBody: {fileID: 5144651309241912699}
   Weeds: {fileID: 1079799871882788026}

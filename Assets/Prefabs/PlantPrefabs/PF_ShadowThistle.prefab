@@ -100,7 +100,7 @@ MonoBehaviour:
   SellPrice: 0
   Effects:
   - {fileID: 0}
-  WateringIntervalInSeconds: 0
+  WateringIntervalInSeconds: {x: 0, y: 0}
   Size: 0
   Status: 0
   SecondsUntilDeathWhenThirsty: 0
@@ -108,6 +108,14 @@ MonoBehaviour:
   SecondsGrowingMediumToGrown: 5
   SecondsGrownToQualityDecay: 5
   SecondsUntilLowestQuality: 0
+  chanceOfWeededness: 0
+  ThirstNotification: {fileID: 0}
+  PlantBody: {fileID: 0}
+  Weeds: {fileID: 0}
+  SaplingSprite: {fileID: 21300000, guid: a68436ca67971784fb71e2d9d60f6bcb, type: 3}
+  JuvenileSprite: {fileID: 21300000, guid: a68436ca67971784fb71e2d9d60f6bcb, type: 3}
+  AdultSprite: {fileID: 21300000, guid: a68436ca67971784fb71e2d9d60f6bcb, type: 3}
+  DeadSprite: {fileID: 0}
 --- !u!61 &5144651309241912698
 BoxCollider2D:
   m_ObjectHideFlags: 0
