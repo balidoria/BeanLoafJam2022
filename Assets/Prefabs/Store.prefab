@@ -1493,6 +1493,10 @@ PrefabInstance:
       value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
+      propertyPath: SecondsUntilLowestQuality
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
       propertyPath: SecondsGrownToQualityDecay
       value: 20
       objectReference: {fileID: 0}
@@ -1673,6 +1677,10 @@ PrefabInstance:
       propertyPath: JuvenileSpriteRenderer
       value: 
       objectReference: {fileID: 737134465}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: SecondsUntilLowestQuality
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: SecondsGrownToQualityDecay
       value: 39
@@ -2124,6 +2132,10 @@ PrefabInstance:
       propertyPath: JuvenileSpriteRenderer
       value: 
       objectReference: {fileID: 1483357172}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: SecondsUntilLowestQuality
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: SecondsGrownToQualityDecay
       value: 40
