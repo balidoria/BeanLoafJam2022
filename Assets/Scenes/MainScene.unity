@@ -1019,6 +1019,18 @@ PrefabInstance:
       propertyPath: SecondsBetweenCastingRange.y
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5144651308863338590, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsGrowingMediumToGrownRange.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651308863338590, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsGrowingMediumToGrownRange.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651308863338590, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsGrowingSmallToMidgrownRange.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5144651309520475158, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: Effects.Array.data[0]
       value: 
