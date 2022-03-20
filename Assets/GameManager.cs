@@ -96,6 +96,7 @@ public class GameManager : MonoBehaviour
             {
                 // make the plant sit on the mouse pos
                 plantBeingPlanted.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + (Vector3.forward * 10);
+
                 if (Input.GetMouseButtonUp(0))
                 {
                     plantBeingPlanted.transform.position = GameGrid.GetCellCenterWorld(gridPosition);
@@ -113,6 +114,12 @@ public class GameManager : MonoBehaviour
                     // keep track of all planted plants.
                     numOfActivePlants++;
                     
+                    plantBeingPlanted = null;
+                }
+
+                if (Input.GetMouseButtonUp(1) || Input.GetKeyDown(KeyCode.Escape))
+                {
+                    Destroy(plantBeingPlanted.gameObject);
                     plantBeingPlanted = null;
                 }
             }
