@@ -53,7 +53,7 @@ public class PlantEffect : MonoBehaviour
             foreach (var plantHit in hits)
             {
                 var plant = plantHit.GetComponentInChildren<BasePlant>();
-                if (plant != null)
+                if (plant != null && plant != originPlant)
                 {
                     castOnPlant(plant);
                 }
