@@ -1238,6 +1238,14 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: c10f4991ba60bad4ca2301a734e0742b, type: 3}
+      propertyPath: growTimeInSecondsRange.x
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: c10f4991ba60bad4ca2301a734e0742b, type: 3}
+      propertyPath: growTimeInSecondsRange.y
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: c10f4991ba60bad4ca2301a734e0742b, type: 3}
       propertyPath: SecondsGrownToQualityDecay
       value: 60
       objectReference: {fileID: 0}
@@ -1256,6 +1264,22 @@ PrefabInstance:
     - target: {fileID: 5144651309241912700, guid: c10f4991ba60bad4ca2301a734e0742b, type: 3}
       propertyPath: SecondsGrowingSmallToMidgrown
       value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: c10f4991ba60bad4ca2301a734e0742b, type: 3}
+      propertyPath: SecondsGrowingMediumToGrownRange.x
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: c10f4991ba60bad4ca2301a734e0742b, type: 3}
+      propertyPath: SecondsGrowingMediumToGrownRange.y
+      value: 43
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: c10f4991ba60bad4ca2301a734e0742b, type: 3}
+      propertyPath: SecondsGrowingSmallToMidgrownRange.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: c10f4991ba60bad4ca2301a734e0742b, type: 3}
+      propertyPath: SecondsGrowingSmallToMidgrownRange.y
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912701, guid: c10f4991ba60bad4ca2301a734e0742b, type: 3}
       propertyPath: m_RootOrder
@@ -1513,8 +1537,16 @@ PrefabInstance:
       value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
+      propertyPath: growTimeInSecondsRange.x
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
+      propertyPath: growTimeInSecondsRange.y
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
       propertyPath: SecondsUntilLowestQuality
-      value: 75
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
       propertyPath: SecondsGrownToQualityDecay
@@ -1534,6 +1566,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
       propertyPath: SecondsGrowingSmallToMidgrown
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
+      propertyPath: SecondsGrowingMediumToGrownRange.x
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
+      propertyPath: SecondsGrowingMediumToGrownRange.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
+      propertyPath: SecondsGrowingSmallToMidgrownRange.x
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
+      propertyPath: SecondsGrowingSmallToMidgrownRange.y
       value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912701, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
@@ -1698,8 +1746,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 737134465}
     - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: growTimeInSecondsRange.x
+      value: 94
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: growTimeInSecondsRange.y
+      value: 98
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: SecondsUntilLowestQuality
-      value: 75
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: SecondsGrownToQualityDecay
@@ -1719,6 +1775,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: SecondsGrowingSmallToMidgrown
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: SecondsGrowingMediumToGrownRange.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: SecondsGrowingMediumToGrownRange.y
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: SecondsGrowingSmallToMidgrownRange.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: SecondsGrowingSmallToMidgrownRange.y
       value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912701, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
@@ -2013,6 +2085,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 158285387}
     - target: {fileID: 5144651309241912700, guid: d1014f02a4ace8d48900e9ffab5203f7, type: 3}
+      propertyPath: growTimeInSecondsRange.x
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: d1014f02a4ace8d48900e9ffab5203f7, type: 3}
+      propertyPath: growTimeInSecondsRange.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: d1014f02a4ace8d48900e9ffab5203f7, type: 3}
       propertyPath: SecondsGrownToQualityDecay
       value: 21
       objectReference: {fileID: 0}
@@ -2031,6 +2111,22 @@ PrefabInstance:
     - target: {fileID: 5144651309241912700, guid: d1014f02a4ace8d48900e9ffab5203f7, type: 3}
       propertyPath: SecondsGrowingSmallToMidgrown
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: d1014f02a4ace8d48900e9ffab5203f7, type: 3}
+      propertyPath: SecondsGrowingMediumToGrownRange.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: d1014f02a4ace8d48900e9ffab5203f7, type: 3}
+      propertyPath: SecondsGrowingMediumToGrownRange.y
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: d1014f02a4ace8d48900e9ffab5203f7, type: 3}
+      propertyPath: SecondsGrowingSmallToMidgrownRange.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: d1014f02a4ace8d48900e9ffab5203f7, type: 3}
+      propertyPath: SecondsGrowingSmallToMidgrownRange.y
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912701, guid: d1014f02a4ace8d48900e9ffab5203f7, type: 3}
       propertyPath: m_RootOrder
@@ -2253,7 +2349,7 @@ PrefabInstance:
     - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: Effects.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5144651308436168182}
     - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: SaplingSpriteRenderer
       value: 
@@ -2263,8 +2359,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1483357172}
     - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: growTimeInSecondsRange.x
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: growTimeInSecondsRange.y
+      value: 87
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: SecondsUntilLowestQuality
-      value: 75
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: SecondsGrownToQualityDecay
@@ -2284,6 +2388,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: SecondsGrowingSmallToMidgrown
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: SecondsGrowingMediumToGrownRange.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: SecondsGrowingMediumToGrownRange.y
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: SecondsGrowingSmallToMidgrownRange.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: SecondsGrowingSmallToMidgrownRange.y
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912701, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
@@ -2339,12 +2459,24 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5144651310326187164, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: target
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651310326187164, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: effectAdjustment
-      value: 1.25
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651310326187164, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: SecondsBetweenCastingRange.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651310326187164, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: SecondsBetweenCastingRange.y
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5144651310326187166, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: m_Name
-      value: SneezingFluxrootEffect
+      value: ScreamingEffect
       objectReference: {fileID: 0}
     - target: {fileID: 5283547697964709966, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: m_Sprite
@@ -2380,6 +2512,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+--- !u!114 &5144651308436168182 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5144651310326187164, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+  m_PrefabInstance: {fileID: 1907071338}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35d23569c58005a4f8237fed8793d1c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5144651309520475158 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
@@ -2476,6 +2619,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 783634791}
     - target: {fileID: 5144651309241912700, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
+      propertyPath: growTimeInSecondsRange.x
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
+      propertyPath: growTimeInSecondsRange.y
+      value: 85
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
       propertyPath: SecondsGrownToQualityDecay
       value: 36
       objectReference: {fileID: 0}
@@ -2494,6 +2645,22 @@ PrefabInstance:
     - target: {fileID: 5144651309241912700, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
       propertyPath: SecondsGrowingSmallToMidgrown
       value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
+      propertyPath: SecondsGrowingMediumToGrownRange.x
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
+      propertyPath: SecondsGrowingMediumToGrownRange.y
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
+      propertyPath: SecondsGrowingSmallToMidgrownRange.x
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
+      propertyPath: SecondsGrowingSmallToMidgrownRange.y
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912701, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
       propertyPath: m_RootOrder
