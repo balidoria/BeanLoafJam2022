@@ -1351,7 +1351,7 @@ PrefabInstance:
       objectReference: {fileID: 1058348684}
     - target: {fileID: 4302945241000381568, guid: ff2d4d5a5500b814c9c44c4d1c791257, type: 3}
       propertyPath: playerStartingMoney
-      value: 1000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4302945241000381568, guid: ff2d4d5a5500b814c9c44c4d1c791257, type: 3}
       propertyPath: SecondsBetweenWeedRolls
