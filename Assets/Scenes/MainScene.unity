@@ -973,6 +973,122 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5144651308863338590, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsGrownToQualityDecay
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651308863338590, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsGrowingMediumToGrown
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651308863338590, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: WateringIntervalInSeconds.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651308863338590, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: WateringIntervalInSeconds.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651308863338590, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsGrowingSmallToMidgrown
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309216037101, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsGrownToQualityDecay
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309216037101, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsGrowingMediumToGrown
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309216037101, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: WateringIntervalInSeconds.x
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309216037101, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: WateringIntervalInSeconds.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309216037101, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsGrowingSmallToMidgrown
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309520475158, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsGrownToQualityDecay
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309520475158, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsGrowingMediumToGrown
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309520475158, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: WateringIntervalInSeconds.x
+      value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309520475158, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: WateringIntervalInSeconds.y
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309564259746, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsGrownToQualityDecay
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309564259746, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsGrowingMediumToGrown
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309564259746, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: WateringIntervalInSeconds.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309564259746, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: WateringIntervalInSeconds.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309564259746, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsGrowingSmallToMidgrown
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309844064994, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsGrownToQualityDecay
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309844064994, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsGrowingMediumToGrown
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309844064994, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: WateringIntervalInSeconds.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309844064994, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: WateringIntervalInSeconds.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309844064994, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsGrowingSmallToMidgrown
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651310377639230, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsGrownToQualityDecay
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651310377639230, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsGrowingMediumToGrown
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651310377639230, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: WateringIntervalInSeconds.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651310377639230, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: WateringIntervalInSeconds.y
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651310377639230, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsGrowingSmallToMidgrown
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
 --- !u!114 &1058348684 stripped

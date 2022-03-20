@@ -82,7 +82,7 @@ public class BasePlant : MonoBehaviour
     public SpriteRenderer Weeds;
     public SpriteRenderer SaplingSpriteRenderer;
     public SpriteRenderer JuvenileSpriteRenderer;
-    public SpriteRenderer AdultSpriteRenderer;
+    public GameObject AdultSpriteRenderer;
     public SpriteRenderer DeadSpriteRenderer;
 
     internal List<EffectTarget> ActiveEffects = new List<EffectTarget>();
@@ -109,6 +109,9 @@ public class BasePlant : MonoBehaviour
     bool planted = false;
     public bool specialAudioPlant;
     bool IsWatered = false;
+
+
+    bool areSpells;
 
     void Start()
     {
@@ -228,8 +231,9 @@ public class BasePlant : MonoBehaviour
                 secondsSpentGrowing = 0;
                 Size = PlantStage.FULLSIZE;
                 Status = PlantStatus.GROWN;
+                Debug.Log("I am a FULL BOY!");
                 ClearBodySprites();
-                AdultSpriteRenderer.enabled = true;
+                AdultSpriteRenderer.SetActive(true);
             }
         }
 
@@ -243,11 +247,16 @@ public class BasePlant : MonoBehaviour
             }
         }
 
-        // Cast spells if we are ready.
-        foreach (PlantEffect spell in Effects)
-        {
-            spell.TryCast(this);
-        }
+ 
+             // Cast spells if we are ready.
+             foreach (PlantEffect spell in Effects)
+             {
+                 if(spell!= null){
+                    spell.TryCast(this);
+                 }
+                 
+             }
+       
     }
 
     internal void rollForWeeds()
@@ -328,9 +337,10 @@ public class BasePlant : MonoBehaviour
 
         if (Size == PlantStage.FULLSIZE)
         {
+            Debug.Log("I am a FULL BOY!");
             Status = PlantStatus.GROWN;
             ClearBodySprites();
-            AdultSpriteRenderer.enabled = true;
+            AdultSpriteRenderer.SetActive(true);
 
         } else if (Status != PlantStatus.DEAD)
         {
@@ -363,6 +373,6 @@ public class BasePlant : MonoBehaviour
     {
         SaplingSpriteRenderer.enabled = false;
         JuvenileSpriteRenderer.enabled = false;
-        AdultSpriteRenderer.enabled = false;
+        AdultSpriteRenderer.SetActive(false);
     }
 }
