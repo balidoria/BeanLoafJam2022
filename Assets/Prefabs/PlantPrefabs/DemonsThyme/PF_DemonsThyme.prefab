@@ -81,6 +81,8 @@ Transform:
   m_Children:
   - {fileID: 5144651310326187165}
   - {fileID: 5144651308470506494}
+  - {fileID: 57755297209143859}
+  - {fileID: 5484576680191347091}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -99,7 +101,7 @@ MonoBehaviour:
   StorePrice: 10
   SellPrice: 35
   Effects: []
-  WateringIntervalInSeconds: 8
+  WateringIntervalInSeconds: {x: 5, y: 10}
   Size: 0
   Status: 0
   SecondsUntilDeathWhenThirsty: 5
@@ -107,14 +109,32 @@ MonoBehaviour:
   SecondsGrowingMediumToGrown: 6
   SecondsGrownToQualityDecay: 6
   SecondsUntilLowestQuality: 5
-  chanceOfWeededness: 0
-  ThirstNotification: {fileID: 0}
-  PlantBody: {fileID: 0}
-  Weeds: {fileID: 0}
+  chanceOfWeededness: 80
+  ThirstNotification: {fileID: 2398393355305131122}
+  PlantBody: {fileID: 5144651309241912699}
+  Weeds: {fileID: 1079799871882788026}
   SaplingSprite: {fileID: 21300000, guid: 7f4588ecc7a601e46b0c4269e509ff9f, type: 3}
   JuvenileSprite: {fileID: 21300000, guid: 50ea6cc6eedd7544ea1f458d921715f5, type: 3}
   AdultSprite: {fileID: 21300000, guid: cba2e997bb23c5a4dbc37e4419abaac5, type: 3}
   DeadSprite: {fileID: 0}
+  plantTransition: {fileID: 2766463458845916146, guid: 4d275c3d7594b254cb77752aa8aef08e, type: 3}
+  waterPlant: {fileID: 2465896208881292616, guid: e5497a9bd0106e94e845e22839b39d02, type: 3}
+  growthComplete: {fileID: 4469924716007554643, guid: f858a701e58062d479a0e8e3792dc40d, type: 3}
+  plantDeath: {fileID: 1646195173293365559, guid: 902dff66ba2161e49a64a2adf8c7484f, type: 3}
+  clearPlot: {fileID: 2766463458845916146, guid: 36b50cc97635a8e4ebe2171aa9965c3c, type: 3}
+  money: {fileID: 5587682952014805528, guid: 6b4f2f5d79f33ad40adac3eb56a33388, type: 3}
+  plantTransitionGrowth: {fileID: 8300000, guid: 9acf97e3593e5bc4e87a7691cb1d6128, type: 3}
+  plantSpecialSound: {fileID: 0}
+  water: {fileID: 8300000, guid: c7a45eaa44404ef4bbfc5d34bd9d2349, type: 3}
+  plantReady: {fileID: 8300000, guid: 4a7ebbcb8dde59e458cc3c396e6edf4f, type: 3}
+  plantPlaced: {fileID: 8300000, guid: cfc1ba175e102604998768526a62b691, type: 3}
+  plantDied: {fileID: 8300000, guid: 77c3dab9b25afa246a402df53887291f, type: 3}
+  digUpPlant: {fileID: 8300000, guid: d575109b38617d64e86f925693ace9e4, type: 3}
+  deweed: {fileID: 8300000, guid: 6fc753da56386d646ba92ff90c105646, type: 3}
+  sellPlant: {fileID: 8300000, guid: 817f4f4bf36e42e4f8f1873edb89370c, type: 3}
+  thirsty: {fileID: 8300000, guid: 1986fefcb4e3fbb4eb858288c6ae5532, type: 3}
+  audioSource: {fileID: 0}
+  specialAudioPlant: 0
 --- !u!61 &5144651309241912698
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -131,8 +151,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2, y: 0.2}
+    pivot: {x: 0.5, y: 0.17}
+    oldSize: {x: 3.47, y: 4.03}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -181,9 +201,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0, g: 1, b: 0.22587347, a: 1}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: cba2e997bb23c5a4dbc37e4419abaac5, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -241,3 +261,171 @@ MonoBehaviour:
   type: 0
   target: 2
   effectAdjustment: 1
+--- !u!1 &5745445967403066020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5484576680191347091}
+  - component: {fileID: 1079799871882788026}
+  m_Layer: 0
+  m_Name: Weed
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5484576680191347091
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5745445967403066020}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 4.88998, y: 4.88998, z: 4.88998}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5144651309241912701}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1079799871882788026
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5745445967403066020}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 7ac944b761881e3448843df01d05b4c9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 3.49, y: 5.23}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &8708825891799271248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 57755297209143859}
+  - component: {fileID: 2398393355305131122}
+  m_Layer: 0
+  m_Name: Thirst Notification
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &57755297209143859
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8708825891799271248}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.84, y: 3.27, z: 0}
+  m_LocalScale: {x: 0.80438, y: 0.80438, z: 0.80438}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5144651309241912701}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &2398393355305131122
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8708825891799271248}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 4
+  m_Sprite: {fileID: 21300000, guid: 0811ce48369bb5b4fabeb83177b0687c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 3.79, y: 6.34}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
