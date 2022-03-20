@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
         {
             // TODO: Check all plants.
             // TODO: End and lose game.
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Lose");
         }
 
         // Cursor.
