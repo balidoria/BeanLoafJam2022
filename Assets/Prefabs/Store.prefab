@@ -1185,6 +1185,30 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: c10f4991ba60bad4ca2301a734e0742b, type: 3}
+      propertyPath: chanceOfWeededness
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: c10f4991ba60bad4ca2301a734e0742b, type: 3}
+      propertyPath: SecondsGrownToQualityDecay
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: c10f4991ba60bad4ca2301a734e0742b, type: 3}
+      propertyPath: SecondsGrowingMediumToGrown
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: c10f4991ba60bad4ca2301a734e0742b, type: 3}
+      propertyPath: WateringIntervalInSeconds.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: c10f4991ba60bad4ca2301a734e0742b, type: 3}
+      propertyPath: WateringIntervalInSeconds.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: c10f4991ba60bad4ca2301a734e0742b, type: 3}
+      propertyPath: SecondsGrowingSmallToMidgrown
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912701, guid: c10f4991ba60bad4ca2301a734e0742b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1376,6 +1400,30 @@ PrefabInstance:
       propertyPath: m_Bounds.m_Extent.y
       value: 1.8550003
       objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
+      propertyPath: chanceOfWeededness
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
+      propertyPath: SecondsGrownToQualityDecay
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
+      propertyPath: SecondsGrowingMediumToGrown
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
+      propertyPath: WateringIntervalInSeconds.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
+      propertyPath: WateringIntervalInSeconds.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
+      propertyPath: SecondsGrowingSmallToMidgrown
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912701, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1529,6 +1577,26 @@ PrefabInstance:
       propertyPath: JuvenileSpriteRenderer
       value: 
       objectReference: {fileID: 737134465}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: SecondsGrownToQualityDecay
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: SecondsGrowingMediumToGrown
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: WateringIntervalInSeconds.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: WateringIntervalInSeconds.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: SecondsGrowingSmallToMidgrown
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912701, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1707,6 +1775,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1617887390}
     - target: {fileID: 5144651309241912700, guid: d1014f02a4ace8d48900e9ffab5203f7, type: 3}
+      propertyPath: chanceOfWeededness
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: d1014f02a4ace8d48900e9ffab5203f7, type: 3}
       propertyPath: AdultSpriteRenderer
       value: 
       objectReference: {fileID: 4627910073446612191}
@@ -1718,6 +1790,22 @@ PrefabInstance:
       propertyPath: JuvenileSpriteRenderer
       value: 
       objectReference: {fileID: 158285387}
+    - target: {fileID: 5144651309241912700, guid: d1014f02a4ace8d48900e9ffab5203f7, type: 3}
+      propertyPath: SecondsGrownToQualityDecay
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: d1014f02a4ace8d48900e9ffab5203f7, type: 3}
+      propertyPath: SecondsGrowingMediumToGrown
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: d1014f02a4ace8d48900e9ffab5203f7, type: 3}
+      propertyPath: WateringIntervalInSeconds.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: d1014f02a4ace8d48900e9ffab5203f7, type: 3}
+      propertyPath: SecondsGrowingSmallToMidgrown
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912701, guid: d1014f02a4ace8d48900e9ffab5203f7, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1916,6 +2004,22 @@ PrefabInstance:
       propertyPath: JuvenileSpriteRenderer
       value: 
       objectReference: {fileID: 1483357172}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: SecondsGrownToQualityDecay
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: SecondsGrowingMediumToGrown
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: WateringIntervalInSeconds.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: WateringIntervalInSeconds.y
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912701, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -2079,6 +2183,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1283310623}
     - target: {fileID: 5144651309241912700, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
+      propertyPath: chanceOfWeededness
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
       propertyPath: AdultSpriteRenderer
       value: 
       objectReference: {fileID: 367558262197142895}
@@ -2090,6 +2198,26 @@ PrefabInstance:
       propertyPath: JuvenileSpriteRenderer
       value: 
       objectReference: {fileID: 783634791}
+    - target: {fileID: 5144651309241912700, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
+      propertyPath: SecondsGrownToQualityDecay
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
+      propertyPath: SecondsGrowingMediumToGrown
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
+      propertyPath: WateringIntervalInSeconds.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
+      propertyPath: WateringIntervalInSeconds.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
+      propertyPath: SecondsGrowingSmallToMidgrown
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912701, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
       propertyPath: m_RootOrder
       value: 4
