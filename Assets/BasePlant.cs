@@ -125,6 +125,12 @@ public class BasePlant : MonoBehaviour
 
     public float plantGrowthRateModifier = 1;
 
+    //coin variables
+    
+    public int minCoins = 1;
+    public int maxCoins = 5;
+    public GameObject coin;
+    public Transform coinTarget;
     
 
     void Start()
@@ -331,10 +337,19 @@ public class BasePlant : MonoBehaviour
     {
         //effects and sounds
         audioSource.PlayOneShot(sellPlant,0.8f);
-        var moneyPartlices = Instantiate(money, new Vector3(this.transform.position.x,this.transform.position.y, -particleZOffset), Quaternion.identity);
+        //var moneyPartlices = Instantiate(money, new Vector3(this.transform.position.x,this.transform.position.y, -particleZOffset), Quaternion.identity);
         //moneyPartlices.transform.parent = this.transform;
-        money.Play();
+       // money.Play();
+        //instantiate a few coins and set their target!
 
+        int coinsToSpawn = UnityEngine.Random.Range(minCoins,maxCoins);
+        for (int i = 0; i < coinsToSpawn; i++)
+        {
+            GameObject spawnedCoin = Instantiate(coin, new Vector3(this.transform.position.x + UnityEngine.Random.Range(-1f,1f), this.transform.position.y + UnityEngine.Random.Range(-1f, 1f), 0), Quaternion.identity); 
+            spawnedCoin.GetComponent<Coin>().CoinTarget = coinTarget;
+        }
+       
+        
         GameManager.instance.PlayerSellPlant(this);
         RemovePlant();
     }
