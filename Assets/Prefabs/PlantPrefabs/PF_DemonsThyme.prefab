@@ -107,6 +107,14 @@ MonoBehaviour:
   SecondsGrowingMediumToGrown: 6
   SecondsGrownToQualityDecay: 6
   SecondsUntilLowestQuality: 5
+  chanceOfWeededness: 0
+  ThirstNotification: {fileID: 0}
+  PlantBody: {fileID: 0}
+  Weeds: {fileID: 0}
+  SaplingSprite: {fileID: 21300000, guid: 7f4588ecc7a601e46b0c4269e509ff9f, type: 3}
+  JuvenileSprite: {fileID: 21300000, guid: 50ea6cc6eedd7544ea1f458d921715f5, type: 3}
+  AdultSprite: {fileID: 21300000, guid: cba2e997bb23c5a4dbc37e4419abaac5, type: 3}
+  DeadSprite: {fileID: 0}
 --- !u!61 &5144651309241912698
 BoxCollider2D:
   m_ObjectHideFlags: 0
