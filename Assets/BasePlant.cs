@@ -33,8 +33,8 @@ public class BasePlant : MonoBehaviour
     // How long I have spent growing at the current stage of growth.
     private int growTimeInSeconds;
 
-    [Tooltip("How often I need to be watered.")]
-    public int WateringIntervalInSeconds;
+    [Tooltip("How often I need to be watered, x is lower bound y is upper bound.")]
+    public Vector2Int WateringIntervalInSeconds;
 
     [Tooltip("How big I have grown.")]
     public PlantStage Size;
@@ -103,12 +103,13 @@ public class BasePlant : MonoBehaviour
 
         // Update status to thirsty or dead if we need water.
         secondsSinceLastWatered += Time.deltaTime;
-        if (secondsSinceLastWatered >= WateringIntervalInSeconds && Status != PlantStatus.DEAD)
+        System.Random rand = new System.Random();
+        if (secondsSinceLastWatered >= WateringIntervalInSeconds.y && Status != PlantStatus.DEAD)
         {
             Status = PlantStatus.THIRSTY;
             ThirstNotification.enabled = true;
         }
-        if (secondsSinceLastWatered - WateringIntervalInSeconds >= SecondsUntilDeathWhenThirsty)
+        if (secondsSinceLastWatered - WateringIntervalInSeconds.y >= SecondsUntilDeathWhenThirsty)
         {
             Status = PlantStatus.DEAD;
             PlantBody.sprite = DeadSprite;
@@ -208,9 +209,12 @@ public class BasePlant : MonoBehaviour
 
     private void WaterPlant()
     {
-        // TODO: Formalize watering design.
         Debug.Log("Watered: " + this.ToString());
-        secondsSinceLastWatered = 0;
+
+        // Start next watering round with a range.
+        System.Random rand = new System.Random();
+        secondsSinceLastWatered = rand.Next(WateringIntervalInSeconds.y - WateringIntervalInSeconds.x);
+        
         if (Size == PlantStage.FULLSIZE)
         {
             Status = PlantStatus.GROWN;
