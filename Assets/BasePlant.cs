@@ -68,7 +68,9 @@ public class BasePlant : MonoBehaviour
     [Tooltip("Base chance of getting weeds on a weed roll, out of 100.")]
     public int chanceOfWeededness;
 
-    internal int weedednessModifier;
+    internal float weedednessModifier = 1.0f;
+
+    internal float waterNeedModifier = 1.0f;
 
     internal bool hasWeeds = false;
 
@@ -82,6 +84,10 @@ public class BasePlant : MonoBehaviour
     public Sprite AdultSprite;
     public Sprite DeadSprite;
 
+    internal List<EffectTarget> ActiveEffects = new List<EffectTarget>();
+    private float timeBetweenEffectResets = 5;
+    private float timeSinceEffectReset = 0.0f;
+
     void Start()
     {
         // I don't need to be watered right away, they watered me at the store.
@@ -93,7 +99,6 @@ public class BasePlant : MonoBehaviour
         OriginalSellPrice = SellPrice;
 
         PlantBody.sprite = SaplingSprite;
-
     }
 
     void Update()
@@ -101,15 +106,24 @@ public class BasePlant : MonoBehaviour
         if (!IsPlanted)
             return;
 
+        // Update our current buffs.
+        timeSinceEffectReset += Time.deltaTime;
+        if (timeSinceEffectReset > timeBetweenEffectResets)
+        {
+            timeBetweenEffectResets = 0;
+            weedednessModifier = 1.0f;
+            waterNeedModifier = 1.0f;
+            ActiveEffects.Clear();
+        }
+
         // Update status to thirsty or dead if we need water.
         secondsSinceLastWatered += Time.deltaTime;
-        System.Random rand = new System.Random();
-        if (secondsSinceLastWatered >= WateringIntervalInSeconds.y && Status != PlantStatus.DEAD)
+        if (secondsSinceLastWatered >= WateringIntervalInSeconds.y * waterNeedModifier && Status != PlantStatus.DEAD)
         {
             Status = PlantStatus.THIRSTY;
             ThirstNotification.enabled = true;
         }
-        if (secondsSinceLastWatered - WateringIntervalInSeconds.y >= SecondsUntilDeathWhenThirsty)
+        if (secondsSinceLastWatered - WateringIntervalInSeconds.y * waterNeedModifier >= SecondsUntilDeathWhenThirsty)
         {
             Status = PlantStatus.DEAD;
             PlantBody.sprite = DeadSprite;
@@ -159,7 +173,7 @@ public class BasePlant : MonoBehaviour
 
         int roll = rand.Next(100);
 
-        if (roll < chanceOfWeededness + weedednessModifier)
+        if (roll < chanceOfWeededness * weedednessModifier)
         {
             // Get weeded.
             hasWeeds = true;
@@ -206,7 +220,7 @@ public class BasePlant : MonoBehaviour
         RemovePlant();
     }
 
-    private void WaterPlant()
+    internal void WaterPlant()
     {
         Debug.Log("Watered: " + this.ToString());
 
