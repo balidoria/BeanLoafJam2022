@@ -270,7 +270,7 @@ MonoBehaviour:
   SellPrice: 65
   Effects:
   - {fileID: 0}
-  WateringIntervalInSeconds: 13
+  WateringIntervalInSeconds: {x: 10, y: 13}
   Size: 0
   Status: 0
   SecondsUntilDeathWhenThirsty: 6

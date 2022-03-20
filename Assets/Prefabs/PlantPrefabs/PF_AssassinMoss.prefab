@@ -185,7 +185,7 @@ MonoBehaviour:
   StorePrice: 25
   SellPrice: 35
   Effects: []
-  WateringIntervalInSeconds: 8
+  WateringIntervalInSeconds: {x: 8, y: 10}
   Size: 0
   Status: 0
   SecondsUntilDeathWhenThirsty: 5
@@ -217,7 +217,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.14}
     oldSize: {x: 2.74, y: 3.71}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5

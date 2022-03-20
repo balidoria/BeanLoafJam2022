@@ -101,7 +101,7 @@ MonoBehaviour:
   StorePrice: 10
   SellPrice: 35
   Effects: []
-  WateringIntervalInSeconds: 8
+  WateringIntervalInSeconds: {x: 5, y: 10}
   Size: 0
   Status: 0
   SecondsUntilDeathWhenThirsty: 5
