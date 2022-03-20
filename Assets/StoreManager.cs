@@ -47,7 +47,7 @@ public class StoreManager : MonoBehaviour
             foreach (var sr in renderers)
             {
                 Color tmp = sr.color;
-                tmp.a = 0.25f;
+                tmp.a = 0.5f;
                 sr.color = tmp;
             }
 
@@ -56,6 +56,7 @@ public class StoreManager : MonoBehaviour
         } else
         {
             // TODO: Show player they can't afford the plant.
+
             Debug.Log("Too poor to buy " + plant.ToString() + " for " + plant.StorePrice);
         }
     }
