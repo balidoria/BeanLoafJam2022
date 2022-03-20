@@ -112,8 +112,9 @@ public class BasePlant : MonoBehaviour
     public bool specialAudioPlant;
     bool IsWatered = false;
 
+    public float plantGrowthRateModifier = 1;
 
-    bool areSpells;
+    
 
     void Start()
     {
@@ -206,7 +207,7 @@ public class BasePlant : MonoBehaviour
         if (Status == PlantStatus.GROWING)
         {
             if (!hasWeeds)
-                secondsSpentGrowing += Time.deltaTime;
+                secondsSpentGrowing += Time.deltaTime * plantGrowthRateModifier;
 
             if (Size == PlantStage.IMBABY && secondsSpentGrowing >= SecondsGrowingSmallToMidgrown)
             {
@@ -253,9 +254,9 @@ public class BasePlant : MonoBehaviour
              // Cast spells if we are ready.
              foreach (PlantEffect spell in Effects)
              {
-                 if(spell!= null){
+                 
                     spell.TryCast(this);
-                 }
+                 
                  
              }
        

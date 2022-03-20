@@ -974,12 +974,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5144651308863338590, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SellPrice
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651308863338590, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: SecondsGrownToQualityDecay
-      value: 11
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5144651308863338590, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: SecondsGrowingMediumToGrown
-      value: 17
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5144651308863338590, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: WateringIntervalInSeconds.x
@@ -991,15 +995,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5144651308863338590, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: SecondsGrowingSmallToMidgrown
-      value: 12
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309216037101, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SellPrice
+      value: 175
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309216037101, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: SecondsGrownToQualityDecay
-      value: 42
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309216037101, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: SecondsGrowingMediumToGrown
-      value: 24
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309216037101, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: WateringIntervalInSeconds.x
@@ -1011,15 +1019,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309216037101, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: SecondsGrowingSmallToMidgrown
-      value: 15
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309331240158, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: effectAdjustment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309520475158, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SellPrice
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309520475158, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: StorePrice
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309520475158, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: SecondsGrownToQualityDecay
-      value: 23
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309520475158, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: SecondsGrowingMediumToGrown
-      value: 18
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309520475158, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: WateringIntervalInSeconds.x
@@ -1029,13 +1049,21 @@ PrefabInstance:
       propertyPath: WateringIntervalInSeconds.y
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 5144651309520475158, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SecondsGrowingSmallToMidgrown
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309564259746, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SellPrice
+      value: 85
+      objectReference: {fileID: 0}
     - target: {fileID: 5144651309564259746, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: SecondsGrownToQualityDecay
-      value: 22
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309564259746, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: SecondsGrowingMediumToGrown
-      value: 18
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309564259746, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: WateringIntervalInSeconds.x
@@ -1047,15 +1075,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309564259746, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: SecondsGrowingSmallToMidgrown
-      value: 10
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651309844064994, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SellPrice
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309844064994, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: SecondsGrownToQualityDecay
-      value: 12
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309844064994, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: SecondsGrowingMediumToGrown
-      value: 9
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309844064994, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: WateringIntervalInSeconds.x
@@ -1067,15 +1099,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309844064994, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: SecondsGrowingSmallToMidgrown
-      value: 6
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144651310377639230, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
+      propertyPath: SellPrice
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 5144651310377639230, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: SecondsGrownToQualityDecay
-      value: 22
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 5144651310377639230, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: SecondsGrowingMediumToGrown
-      value: 14
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5144651310377639230, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: WateringIntervalInSeconds.x
@@ -1087,7 +1123,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5144651310377639230, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: SecondsGrowingSmallToMidgrown
-      value: 18
+      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
@@ -1314,8 +1350,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1058348684}
     - target: {fileID: 4302945241000381568, guid: ff2d4d5a5500b814c9c44c4d1c791257, type: 3}
+      propertyPath: playerStartingMoney
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302945241000381568, guid: ff2d4d5a5500b814c9c44c4d1c791257, type: 3}
       propertyPath: SecondsBetweenWeedRolls
-      value: 60
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff2d4d5a5500b814c9c44c4d1c791257, type: 3}
