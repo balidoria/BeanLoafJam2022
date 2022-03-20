@@ -87,6 +87,7 @@ public class BasePlant : MonoBehaviour
     public ParticleSystem growthComplete;
     public ParticleSystem plantDeath;
     public ParticleSystem clearPlot;
+    public ParticleSystem money;
 
     public AudioClip plantTransitionGrowth;
     public AudioClip plantSpecialSound;
@@ -96,6 +97,14 @@ public class BasePlant : MonoBehaviour
     public AudioClip plantDied;
     public AudioClip digUpPlant;
     public AudioClip deweed;
+    public AudioClip sellPlant;
+    public AudioClip thirsty;
+
+    public AudioSource audioSource;
+    bool planted = false;
+    public bool specialAudioPlant;
+    bool iswatered = false;
+
 
 
 
@@ -111,6 +120,9 @@ public class BasePlant : MonoBehaviour
 
         PlantBody.sprite = SaplingSprite;
 
+        audioSource = FindObjectOfType<AudioSource>();
+        
+
     }
 
     void Update()
@@ -118,16 +130,33 @@ public class BasePlant : MonoBehaviour
         if (!IsPlanted)
             return;
 
+        //sound and effect code    
+        if(!planted){
+                audioSource.PlayOneShot(plantPlaced,0.3f);
+                Instantiate(clearPlot, new Vector3(this.transform.position.x,this.transform.position.y,0f), Quaternion.identity);
+                clearPlot.Play();
+                planted = true;
+            }
+            
+
         // Update status to thirsty or dead if we need water.
         secondsSinceLastWatered += Time.deltaTime;
         System.Random rand = new System.Random();
-        if (secondsSinceLastWatered >= WateringIntervalInSeconds.y && Status != PlantStatus.DEAD)
+        if (secondsSinceLastWatered >= WateringIntervalInSeconds.y && Status != PlantStatus.DEAD && Status != PlantStatus.GROWN)
         {
+            if(!iswatered){
+                iswatered = true;
+                audioSource.PlayOneShot(thirsty,0.3f);
+            }
             Status = PlantStatus.THIRSTY;
             ThirstNotification.enabled = true;
         }
         if (secondsSinceLastWatered - WateringIntervalInSeconds.y >= SecondsUntilDeathWhenThirsty)
         {
+            audioSource.PlayOneShot(plantDied,0.3f);
+            Instantiate(plantDeath, new Vector3(this.transform.position.x,this.transform.position.y,0f), Quaternion.identity);
+            plantDeath.Play();
+
             Status = PlantStatus.DEAD;
             PlantBody.sprite = DeadSprite;
             ThirstNotification.enabled = false;
@@ -141,11 +170,23 @@ public class BasePlant : MonoBehaviour
 
             if (Size == PlantStage.IMBABY && secondsSpentGrowing >= SecondsGrowingSmallToMidgrown)
             {
+                 //Particle Effects and Sound
+                audioSource.PlayOneShot(plantTransitionGrowth,0.3f);
+                Instantiate(plantTransition, new Vector3(this.transform.position.x,this.transform.position.y,0f), Quaternion.identity);
+                plantTransition.Play();
+
                 Size = PlantStage.HALFWAYTHERE;
                 PlantBody.sprite = JuvenileSprite;
                 secondsSpentGrowing = 0;
+
+               
             } else if (Size == PlantStage.HALFWAYTHERE && secondsSpentGrowing >= SecondsGrowingMediumToGrown)
             {
+                 //Particle Effects and Sound
+                audioSource.PlayOneShot(plantReady,0.3f);
+                Instantiate(growthComplete, new Vector3(this.transform.position.x,this.transform.position.y,0f), Quaternion.identity);
+                growthComplete.Play();
+
                 secondsSpentGrowing = 0;
                 Size = PlantStage.FULLSIZE;
                 Status = PlantStatus.GROWN;
@@ -213,6 +254,7 @@ public class BasePlant : MonoBehaviour
 
     private void RemoveWeeds()
     {
+        audioSource.PlayOneShot(deweed,0.3f);
         Debug.Log("Deweeded " + this.ToString());
         hasWeeds = false;
         Weeds.enabled = false;
@@ -220,12 +262,21 @@ public class BasePlant : MonoBehaviour
 
     private void SellPlant()
     {
+        //effects and sounds
+        audioSource.PlayOneShot(sellPlant,0.3f);
+        Instantiate(money, new Vector3(this.transform.position.x,this.transform.position.y,0f), Quaternion.identity);
+        money.Play();
+
         GameManager.instance.PlayerSellPlant(this);
         RemovePlant();
     }
 
     private void WaterPlant()
     {
+        audioSource.PlayOneShot(water,0.3f);
+        Instantiate(waterPlant, new Vector3(this.transform.position.x,this.transform.position.y,0f), Quaternion.identity);
+        waterPlant.Play();
+        iswatered = false;
         Debug.Log("Watered: " + this.ToString());
 
         // Start next watering round with a range.
@@ -247,6 +298,10 @@ public class BasePlant : MonoBehaviour
 
     private void RemovePlant()
     {
+        audioSource.PlayOneShot(digUpPlant,0.3f);
+        Instantiate(clearPlot, new Vector3(this.transform.position.x,this.transform.position.y,0f), Quaternion.identity);
+        clearPlot.Play();
+
         // Remove this plant from existence.
         Debug.Log("Remvoing: " + this.ToString());
         Destroy(gameObject);

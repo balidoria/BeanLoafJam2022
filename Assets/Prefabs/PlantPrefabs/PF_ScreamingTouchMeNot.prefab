@@ -122,7 +122,8 @@ MonoBehaviour:
   waterPlant: {fileID: 2465896208881292616, guid: e5497a9bd0106e94e845e22839b39d02, type: 3}
   growthComplete: {fileID: 4469924716007554643, guid: f858a701e58062d479a0e8e3792dc40d, type: 3}
   plantDeath: {fileID: 1646195173293365559, guid: 902dff66ba2161e49a64a2adf8c7484f, type: 3}
-  clearPlot: {fileID: 2766463458845916146, guid: 4d275c3d7594b254cb77752aa8aef08e, type: 3}
+  clearPlot: {fileID: 2766463458845916146, guid: 36b50cc97635a8e4ebe2171aa9965c3c, type: 3}
+  money: {fileID: 5587682952014805528, guid: 6b4f2f5d79f33ad40adac3eb56a33388, type: 3}
   plantTransitionGrowth: {fileID: 8300000, guid: 9acf97e3593e5bc4e87a7691cb1d6128, type: 3}
   plantSpecialSound: {fileID: 8300000, guid: e9fddb844b164524dad29e29192b91a1, type: 3}
   water: {fileID: 8300000, guid: c7a45eaa44404ef4bbfc5d34bd9d2349, type: 3}
@@ -131,6 +132,10 @@ MonoBehaviour:
   plantDied: {fileID: 8300000, guid: 77c3dab9b25afa246a402df53887291f, type: 3}
   digUpPlant: {fileID: 8300000, guid: c7cffab24b3607a40961dd98259bc48b, type: 3}
   deweed: {fileID: 8300000, guid: 6fc753da56386d646ba92ff90c105646, type: 3}
+  sellPlant: {fileID: 8300000, guid: 817f4f4bf36e42e4f8f1873edb89370c, type: 3}
+  thirsty: {fileID: 8300000, guid: 1986fefcb4e3fbb4eb858288c6ae5532, type: 3}
+  audioSource: {fileID: 0}
+  specialAudioPlant: 0
 --- !u!61 &5144651309241912698
 BoxCollider2D:
   m_ObjectHideFlags: 0
