@@ -59,11 +59,14 @@ public class GameManager : MonoBehaviour
         // Ending the game.
         if (playerMoney >= goalMoney)
         {
-            // TODO: End and win game.
+            // End and win game.
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Ending");
         }
-        if (playerMoney <= 0)
+        if (playerMoney < 10)
         {
+            // TODO: Check all plants.
             // TODO: End and lose game.
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Lose");
         }
 
         // Cursor.
