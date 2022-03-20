@@ -1226,6 +1226,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: c10f4991ba60bad4ca2301a734e0742b, type: 3}
+      propertyPath: coin
+      value: 
+      objectReference: {fileID: 5050019127552229586, guid: 2a7b1a3a35fd79645bb2e599354b5771, type: 3}
+    - target: {fileID: 5144651309241912700, guid: c10f4991ba60bad4ca2301a734e0742b, type: 3}
       propertyPath: thirsty
       value: 
       objectReference: {fileID: 8300000, guid: 52939a250ddd20f46a2195d7df6adfc3, type: 3}
@@ -1525,6 +1529,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
+      propertyPath: coin
+      value: 
+      objectReference: {fileID: 5050019127552229586, guid: 2a7b1a3a35fd79645bb2e599354b5771, type: 3}
+    - target: {fileID: 5144651309241912700, guid: b849b5bcf32ead140926e17f716ee866, type: 3}
       propertyPath: thirsty
       value: 
       objectReference: {fileID: 8300000, guid: 52939a250ddd20f46a2195d7df6adfc3, type: 3}
@@ -1717,6 +1725,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: coin
+      value: 
+      objectReference: {fileID: 5050019127552229586, guid: 2a7b1a3a35fd79645bb2e599354b5771, type: 3}
     - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: thirsty
       value: 
@@ -2057,6 +2069,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5144651309241912700, guid: d1014f02a4ace8d48900e9ffab5203f7, type: 3}
+      propertyPath: coin
+      value: 
+      objectReference: {fileID: 5050019127552229586, guid: 2a7b1a3a35fd79645bb2e599354b5771, type: 3}
+    - target: {fileID: 5144651309241912700, guid: d1014f02a4ace8d48900e9ffab5203f7, type: 3}
       propertyPath: thirsty
       value: 
       objectReference: {fileID: 8300000, guid: 52939a250ddd20f46a2195d7df6adfc3, type: 3}
@@ -2327,6 +2343,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 0ff9bb8a88a0a174b9ce1f2c0f588053, type: 3}
     - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
+      propertyPath: coin
+      value: 
+      objectReference: {fileID: 5050019127552229586, guid: 2a7b1a3a35fd79645bb2e599354b5771, type: 3}
+    - target: {fileID: 5144651309241912700, guid: 9ffc6dbd942822e42942c0b785c518ca, type: 3}
       propertyPath: thirsty
       value: 
       objectReference: {fileID: 8300000, guid: 52939a250ddd20f46a2195d7df6adfc3, type: 3}
@@ -2590,6 +2610,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5144651309241912700, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
+      propertyPath: coin
+      value: 
+      objectReference: {fileID: 5050019127552229586, guid: 2a7b1a3a35fd79645bb2e599354b5771, type: 3}
     - target: {fileID: 5144651309241912700, guid: 2166e728cb3ea134c9723de772c97ba6, type: 3}
       propertyPath: thirsty
       value: 
