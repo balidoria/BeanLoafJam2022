@@ -71,6 +71,7 @@ public class PlantEffect : MonoBehaviour
         if (target == EffectTarget.PLANTGROWTHRATE && !plant.ActiveEffects.Contains(EffectTarget.PLANTGROWTHRATE))
         {
             plant.waterNeedModifier = effectAdjustment;
+            plant.plantGrowthRateModifier = effectAdjustment;
             plant.ActiveEffects.Add(EffectTarget.PLANTGROWTHRATE);
         }
 
