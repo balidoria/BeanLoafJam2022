@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
     [Tooltip("How much money the player needs to win the game.")]    
     [SerializeField] internal int goalMoney;
 
+    [Tooltip("Do not set! keeps track of the number of plants.")]
+    public int numOfActivePlants = 0; 
+
     public Grid GameGrid;
     public Tilemap GameTileMap;
     public Tilemap UITileMap;
@@ -48,6 +51,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         playerMoney = playerStartingMoney;
+        numOfActivePlants = 0;
     }
 
     void Update()
@@ -62,9 +66,8 @@ public class GameManager : MonoBehaviour
             // End and win game.
             UnityEngine.SceneManagement.SceneManager.LoadScene("Ending");
         }
-        if (playerMoney < 10)
+        if (playerMoney < 10 && numOfActivePlants == 0)
         {
-            // TODO: Check all plants.
             // TODO: End and lose game.
             UnityEngine.SceneManagement.SceneManager.LoadScene("Lose");
         }
@@ -104,7 +107,8 @@ public class GameManager : MonoBehaviour
                         tmp.a = 1.0f;
                         sr.color = tmp;
                     }
-                    
+                    // keep track of all planted plants.
+                    numOfActivePlants++;
                     
                     plantBeingPlanted = null;
                 }

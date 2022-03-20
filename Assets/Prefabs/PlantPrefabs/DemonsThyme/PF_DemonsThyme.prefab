@@ -44,10 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35d23569c58005a4f8237fed8793d1c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsBetweenCasting: 10
-  type: 0
+  SecondsBetweenCastingRange: {x: 0, y: 0}
   target: 1
   effectAdjustment: 1
+  Range: 0
 --- !u!1 &5144651309241912702
 GameObject:
   m_ObjectHideFlags: 0
@@ -83,6 +83,7 @@ Transform:
   - {fileID: 5144651308470506494}
   - {fileID: 57755297209143859}
   - {fileID: 5484576680191347091}
+  - {fileID: 5952356959651056471}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -109,14 +110,15 @@ MonoBehaviour:
   SecondsGrowingMediumToGrown: 6
   SecondsGrownToQualityDecay: 6
   SecondsUntilLowestQuality: 5
+  particleZOffset: 3
   chanceOfWeededness: 80
   ThirstNotification: {fileID: 2398393355305131122}
   PlantBody: {fileID: 5144651309241912699}
   Weeds: {fileID: 1079799871882788026}
-  SaplingSprite: {fileID: 21300000, guid: 7f4588ecc7a601e46b0c4269e509ff9f, type: 3}
-  JuvenileSprite: {fileID: 21300000, guid: 50ea6cc6eedd7544ea1f458d921715f5, type: 3}
-  AdultSprite: {fileID: 21300000, guid: cba2e997bb23c5a4dbc37e4419abaac5, type: 3}
-  DeadSprite: {fileID: 0}
+  SaplingSpriteRenderer: {fileID: 0}
+  JuvenileSpriteRenderer: {fileID: 0}
+  AdultSpriteRenderer: {fileID: 4627910073780312897}
+  DeadSpriteRenderer: {fileID: 0}
   plantTransition: {fileID: 2766463458845916146, guid: 4d275c3d7594b254cb77752aa8aef08e, type: 3}
   waterPlant: {fileID: 2465896208881292616, guid: e5497a9bd0106e94e845e22839b39d02, type: 3}
   growthComplete: {fileID: 4469924716007554643, guid: f858a701e58062d479a0e8e3792dc40d, type: 3}
@@ -257,10 +259,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35d23569c58005a4f8237fed8793d1c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsBetweenCasting: 5
-  type: 0
+  SecondsBetweenCastingRange: {x: 0, y: 0}
   target: 2
   effectAdjustment: 1
+  Range: 0
 --- !u!1 &5745445967403066020
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,3 +431,74 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1306900252839970597
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5144651309241912701}
+    m_Modifications:
+    - target: {fileID: 4663494753515883634, guid: ec17dcab6cdc48b4d8eac33084d4e798, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663494753515883634, guid: ec17dcab6cdc48b4d8eac33084d4e798, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 35.129898
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663494753515883634, guid: ec17dcab6cdc48b4d8eac33084d4e798, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.115881
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663494753515883634, guid: ec17dcab6cdc48b4d8eac33084d4e798, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663494753515883634, guid: ec17dcab6cdc48b4d8eac33084d4e798, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663494753515883634, guid: ec17dcab6cdc48b4d8eac33084d4e798, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663494753515883634, guid: ec17dcab6cdc48b4d8eac33084d4e798, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663494753515883634, guid: ec17dcab6cdc48b4d8eac33084d4e798, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663494753515883634, guid: ec17dcab6cdc48b4d8eac33084d4e798, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663494753515883634, guid: ec17dcab6cdc48b4d8eac33084d4e798, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663494753515883634, guid: ec17dcab6cdc48b4d8eac33084d4e798, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916227334566157412, guid: ec17dcab6cdc48b4d8eac33084d4e798, type: 3}
+      propertyPath: m_Name
+      value: Demonthyme_mature_Rigged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916227334566157412, guid: ec17dcab6cdc48b4d8eac33084d4e798, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ec17dcab6cdc48b4d8eac33084d4e798, type: 3}
+--- !u!1 &4627910073780312897 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5916227334566157412, guid: ec17dcab6cdc48b4d8eac33084d4e798, type: 3}
+  m_PrefabInstance: {fileID: 1306900252839970597}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5952356959651056471 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4663494753515883634, guid: ec17dcab6cdc48b4d8eac33084d4e798, type: 3}
+  m_PrefabInstance: {fileID: 1306900252839970597}
+  m_PrefabAsset: {fileID: 0}
