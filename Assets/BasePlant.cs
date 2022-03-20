@@ -76,13 +76,11 @@ public class BasePlant : MonoBehaviour
 
     public SpriteRenderer ThirstNotification;
     public SpriteRenderer PlantBody;
-
     public SpriteRenderer Weeds;
-
-    public Sprite SaplingSprite;
-    public Sprite JuvenileSprite;
-    public Sprite AdultSprite;
-    public Sprite DeadSprite;
+    public SpriteRenderer SaplingSpriteRenderer;
+    public SpriteRenderer JuvenileSpriteRenderer;
+    public SpriteRenderer AdultSpriteRenderer;
+    public SpriteRenderer DeadSpriteRenderer;
 
     internal List<EffectTarget> ActiveEffects = new List<EffectTarget>();
     private float timeBetweenEffectResets = 5;
@@ -93,7 +91,6 @@ public class BasePlant : MonoBehaviour
     public ParticleSystem plantDeath;
     public ParticleSystem clearPlot;
     public ParticleSystem money;
-
     public AudioClip plantTransitionGrowth;
     public AudioClip plantSpecialSound;
     public AudioClip water;
@@ -110,9 +107,6 @@ public class BasePlant : MonoBehaviour
     public bool specialAudioPlant;
     bool iswatered = false;
 
-
-
-
     void Start()
     {
         // I don't need to be watered right away, they watered me at the store.
@@ -123,11 +117,14 @@ public class BasePlant : MonoBehaviour
         // Keep a record since our selling price can decay.
         OriginalSellPrice = SellPrice;
 
-        PlantBody.sprite = SaplingSprite;
+        ClearBodySprites();
+        SaplingSpriteRenderer.enabled = true;
 
         audioSource = FindObjectOfType<AudioSource>();
         
-
+        var sr = GetComponent<SpriteRenderer>();
+        if (sr != null)
+            sr.enabled = false;
     }
 
     void Update()
@@ -172,7 +169,8 @@ public class BasePlant : MonoBehaviour
             plantDeath.Play();
 
             Status = PlantStatus.DEAD;
-            PlantBody.sprite = DeadSprite;
+            ClearBodySprites();
+            DeadSpriteRenderer.enabled = true;
             ThirstNotification.enabled = false;
         }
 
@@ -190,7 +188,8 @@ public class BasePlant : MonoBehaviour
                 plantTransition.Play();
 
                 Size = PlantStage.HALFWAYTHERE;
-                PlantBody.sprite = JuvenileSprite;
+                ClearBodySprites();
+                JuvenileSpriteRenderer.enabled = true;
                 secondsSpentGrowing = 0;
 
                
@@ -204,7 +203,8 @@ public class BasePlant : MonoBehaviour
                 secondsSpentGrowing = 0;
                 Size = PlantStage.FULLSIZE;
                 Status = PlantStatus.GROWN;
-                PlantBody.sprite = AdultSprite;
+                ClearBodySprites();
+                AdultSpriteRenderer.enabled = true;
             }
         }
 
@@ -299,12 +299,20 @@ public class BasePlant : MonoBehaviour
         if (Size == PlantStage.FULLSIZE)
         {
             Status = PlantStatus.GROWN;
-            PlantBody.sprite = AdultSprite;
+            ClearBodySprites();
+            AdultSpriteRenderer.enabled = true;
 
         } else if (Status != PlantStatus.DEAD)
         {
             Status = PlantStatus.GROWING;
-            PlantBody.sprite = Size == PlantStage.IMBABY ? SaplingSprite : JuvenileSprite;
+            ClearBodySprites();
+            if (Size == PlantStage.IMBABY)
+            {
+                SaplingSpriteRenderer.enabled = true;
+            } else
+            {
+                JuvenileSpriteRenderer.enabled = true;
+            }
         }
         ThirstNotification.enabled = false;
     }
@@ -318,5 +326,12 @@ public class BasePlant : MonoBehaviour
         // Remove this plant from existence.
         Debug.Log("Remvoing: " + this.ToString());
         Destroy(gameObject);
+    }
+
+    private void ClearBodySprites()
+    {
+        SaplingSpriteRenderer.enabled = false;
+        JuvenileSpriteRenderer.enabled = false;
+        AdultSpriteRenderer.enabled = false;
     }
 }

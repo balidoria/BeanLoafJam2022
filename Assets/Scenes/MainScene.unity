@@ -925,18 +925,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 178136650, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 343845070, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1814214405, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1190925342525167579, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
       propertyPath: m_Name
       value: Store
@@ -985,38 +973,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5144651308636008916, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5144651308933951317, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5144651310034904757, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
-      propertyPath: m_Name
-      value: TouchMeNotEffect
-      objectReference: {fileID: 0}
-    - target: {fileID: 5144651310034904757, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5144651310034904759, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
-      propertyPath: Range
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5144651310034904759, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
-      propertyPath: SecondsBetweenCastingRange.x
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5144651310034904759, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
-      propertyPath: SecondsBetweenCastingRange.y
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5144651310377639230, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
-      propertyPath: Effects.Array.data[0]
-      value: 
-      objectReference: {fileID: 1058348685}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
 --- !u!114 &1058348684 stripped
@@ -1028,17 +984,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 37bb9814713d95140bfd3486583dfd8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1058348685 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5144651309331240158, guid: c1caaca47b948854e87c0ab448f27567, type: 3}
-  m_PrefabInstance: {fileID: 1058348683}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35d23569c58005a4f8237fed8793d1c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1087649645
