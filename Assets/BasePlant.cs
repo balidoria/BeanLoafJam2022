@@ -172,7 +172,7 @@ public class BasePlant : MonoBehaviour
         //sound and effect code    
         if(!planted)
         {
-            audioSource.PlayOneShot(plantPlaced,0.3f);
+            audioSource.PlayOneShot(plantPlaced,0.8f);
             var cp = Instantiate(clearPlot, new Vector3(this.transform.position.x,this.transform.position.y,-particleZOffset), Quaternion.identity);
             cp.transform.parent = this.transform;
             clearPlot.Play();
@@ -185,14 +185,14 @@ public class BasePlant : MonoBehaviour
             if(!IsWatered)
             {
                 IsWatered = true;
-                audioSource.PlayOneShot(thirsty,0.75f);
+                audioSource.PlayOneShot(thirsty, 0.8f);
             }
             Status = PlantStatus.THIRSTY;
             ThirstNotification.enabled = true;
         }
         if (secondsSinceLastWatered - WateringIntervalInSeconds.y * waterNeedModifier >= SecondsUntilDeathWhenThirsty && Status != PlantStatus.DEAD)
         {
-            audioSource.PlayOneShot(plantDied,0.3f);
+            audioSource.PlayOneShot(plantDied, 0.8f);
             var death = Instantiate(plantDeath, new Vector3(this.transform.position.x,this.transform.position.y, -particleZOffset), Quaternion.identity);
             death.transform.parent = this.transform;
             plantDeath.Play();
@@ -212,7 +212,7 @@ public class BasePlant : MonoBehaviour
             if (Size == PlantStage.IMBABY && secondsSpentGrowing >= SecondsGrowingSmallToMidgrown)
             {
                  //Particle Effects and Sound
-                audioSource.PlayOneShot(plantTransitionGrowth,0.3f);
+                audioSource.PlayOneShot(plantTransitionGrowth,0.8f);
                 var transition = Instantiate(plantTransition, new Vector3(this.transform.position.x,this.transform.position.y, -particleZOffset), Quaternion.identity);
                 transition.transform.parent = this.transform;
                 plantTransition.Play();
@@ -226,7 +226,7 @@ public class BasePlant : MonoBehaviour
             } else if (Size == PlantStage.HALFWAYTHERE && secondsSpentGrowing >= SecondsGrowingMediumToGrown)
             {
                  //Particle Effects and Sound
-                audioSource.PlayOneShot(plantReady,0.3f);
+                audioSource.PlayOneShot(plantReady,0.8f);
                 var grown = Instantiate(growthComplete, new Vector3(this.transform.position.x,this.transform.position.y, -particleZOffset), Quaternion.identity);
                 grown.transform.parent = this.transform;
                 growthComplete.Play();
@@ -307,7 +307,7 @@ public class BasePlant : MonoBehaviour
 
     private void RemoveWeeds()
     {
-        audioSource.PlayOneShot(deweed,0.3f);
+        audioSource.PlayOneShot(deweed,0.8f);
         Debug.Log("Deweeded " + this.ToString());
         hasWeeds = false;
         Weeds.enabled = false;
@@ -316,7 +316,7 @@ public class BasePlant : MonoBehaviour
     private void SellPlant()
     {
         //effects and sounds
-        audioSource.PlayOneShot(sellPlant,0.3f);
+        audioSource.PlayOneShot(sellPlant,0.8f);
         var moneyPartlices = Instantiate(money, new Vector3(this.transform.position.x,this.transform.position.y, -particleZOffset), Quaternion.identity);
         //moneyPartlices.transform.parent = this.transform;
         money.Play();
@@ -327,7 +327,7 @@ public class BasePlant : MonoBehaviour
 
     internal void WaterPlant()
     {
-        audioSource.PlayOneShot(water,0.3f);
+        audioSource.PlayOneShot(water,0.8f);
         var waterParticles = Instantiate(waterPlant, new Vector3(this.transform.position.x,this.transform.position.y, -particleZOffset), Quaternion.identity);
         waterParticles.transform.parent = this.transform;
         waterPlant.Play();
@@ -362,7 +362,7 @@ public class BasePlant : MonoBehaviour
 
     private void RemovePlant()
     {
-        audioSource.PlayOneShot(digUpPlant,0.3f);
+        audioSource.PlayOneShot(digUpPlant,0.8f);
         var clear = Instantiate(clearPlot, new Vector3(this.transform.position.x,this.transform.position.y, -particleZOffset), Quaternion.identity);
         clear.transform.parent = this.transform;
         clearPlot.Play();
