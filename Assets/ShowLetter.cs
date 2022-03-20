@@ -5,11 +5,8 @@ using UnityEngine.UI;
 
 public class ShowLetter : MonoBehaviour
 {
-    private bool showLetter = false;
-    public SpriteRenderer letter;
-    public SpriteRenderer title;
-    public GameObject showLetterButton;
-    public GameObject playButton;
+    private bool isOpen = false;
+    public GameObject credits;
 
     // Start is called before the first frame update
   /*  void Awake(){
@@ -18,15 +15,9 @@ public class ShowLetter : MonoBehaviour
         playButton = gameObject.GetComponent<Button>();
     }*/
 
-    public void ShowTheLetter()
+    public void ToggleCredits()
     {
-        if(!showLetter){
-            letter.enabled = true;
-            title.enabled = false;
-            showLetter = true;
-            showLetterButton.SetActive(false);
-            playButton.SetActive(true);
-
-        }
+        isOpen = !isOpen;
+        credits.SetActive(isOpen);
     }
 }
