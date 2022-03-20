@@ -214,7 +214,7 @@ public class BasePlant : MonoBehaviour
         // Start next watering round with a range.
         System.Random rand = new System.Random();
         secondsSinceLastWatered = rand.Next(WateringIntervalInSeconds.y - WateringIntervalInSeconds.x);
-        
+
         if (Size == PlantStage.FULLSIZE)
         {
             Status = PlantStatus.GROWN;
@@ -234,17 +234,4 @@ public class BasePlant : MonoBehaviour
         Debug.Log("Remvoing: " + this.ToString());
         Destroy(gameObject);
     }
-}
-
-public enum EffectOperator
-{
-    ADDORSUBTRACT,
-    MULTIPLY
-}
-
-public enum EffectTarget
-{
-    GROWSPEED,
-    WATERNEED,
-    BANKACCOUNT
 }

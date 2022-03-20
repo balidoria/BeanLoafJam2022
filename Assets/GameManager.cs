@@ -132,7 +132,7 @@ public class GameManager : MonoBehaviour
         return hit.GetComponentInChildren<BasePlant>();
     }
 
-    private bool TileEmpty(Vector3 gridPositionWorld)
+    public bool TileEmpty(Vector3 gridPositionWorld)
     {
         var hit = Physics2D.OverlapCircle(Vector2Int.FloorToInt(new Vector2(gridPositionWorld.x, gridPositionWorld.y)), 1);
         if (hit != null && hit.GetComponentInChildren<BasePlant>() != null)
@@ -151,7 +151,6 @@ public class GameManager : MonoBehaviour
             Debug.Log("Sold " + plant.ToString() + " for " + plant.SellPrice);
         } else
         {
-            // TODO: No sale!
             Debug.Log("Tried to sell " + plant.ToString() + " but it was not fully grown!");
         }
     }

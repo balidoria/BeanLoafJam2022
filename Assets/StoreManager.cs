@@ -68,4 +68,3 @@ public class StoreManager : MonoBehaviour
     [Tooltip("The plants for sale in the store.")]
     public List<BasePlant> plantsForSale;
 }
-
